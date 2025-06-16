@@ -11,7 +11,7 @@ const Projects = () => {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
   const navigate = useNavigate();
-
+  const API_BASE= process.env.REACT_APP_API_BASE 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -41,7 +41,7 @@ const Projects = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/customers", {
+      const response = await fetch(`${API_BASE}/customers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, project_id: projectId }),

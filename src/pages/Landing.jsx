@@ -30,12 +30,12 @@ const Landing = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [projectId, setProjectId] = useState(projects[0]?.id || "");
-
+  const API_BASE= process.env.REACT_APP_API_BASE
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/customers", {
+      const res = await fetch(`${API_BASE}/customers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, project_id: projectId }),

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { MessageCircle, X, Send, RefreshCw } from "lucide-react";
 
 const PROJECTS = ["Krupal Habitat", "Ramvan Villas", "Firefly Homes"];
-const API_BASE = "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_API_BASE
 
 const getUserId = () => {
   let id = localStorage.getItem("user_id");
