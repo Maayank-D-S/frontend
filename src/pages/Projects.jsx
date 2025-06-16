@@ -11,7 +11,7 @@ const Projects = () => {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
   const navigate = useNavigate();
-  const API_BASE= process.env.REACT_APP_API_BASE 
+  const API_BASE = process.env.REACT_APP_API_BASE;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -52,7 +52,9 @@ const Projects = () => {
         console.error("Error submitting form:", data.error);
         return;
       }
-      alert(" Thanks for reaching out we will contact you on whatsapp and email shortly!");
+      alert(
+        " Thanks for reaching out we will contact you on whatsapp and email shortly!"
+      );
 
       setName("");
       setEmail("");
@@ -191,53 +193,55 @@ const Projects = () => {
       </motion.div>
       {/* About Project */}
       <section
-  id="about-project"
-  className="bg-black py-16 px-6 max-w-7xl mx-auto"  /* ← mx-auto added */
->
-  <div className="max-w-6xl mx-auto">
-    <motion.h3
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="text-4xl font-bold mb-8 text-center"
-    >
-      About Project
-    </motion.h3>
+        id="about-project"
+        className="bg-black py-16 px-6 max-w-7xl mx-auto" /* ← mx-auto added */
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h3
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold mb-8 text-center"
+          >
+            About Project
+          </motion.h3>
 
-    <p className="text-xl text-gray-300 max-w-7xl mb-12 mx-auto text-center">
-      {project.description}
-    </p>
+          <p className="text-xl text-gray-300 max-w-7xl mb-12 mx-auto text-center">
+            {project.description}
+          </p>
 
-    {/* grid now centers its children */}
-    <div className="grid md:grid-cols-3 gap-6 place-items-center">
-      {project.Advantages.map((adv, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: i * 0.2 }}
-          viewport={{ once: true }}
-          className="bg-white/5 p-6 rounded-2xl text-white text-center shadow-md w-full"
-        >
-          <div className="text-blue-500 mb-4">
-            {i % 3 === 0 ? (
-              <ShieldCheck className="mx-auto w-8 h-8" />
-            ) : i % 3 === 1 ? (
-              <Star className="mx-auto w-8 h-8" />
-            ) : (
-              <KeyRound className="mx-auto w-8 h-8" />
-            )}
+          {/* grid now centers its children */}
+          <div className="grid md:grid-cols-3 gap-6 place-items-center">
+            {project.Advantages.map((adv, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white/5 p-6 rounded-2xl text-white text-center shadow-md w-full"
+              >
+                <div className="text-blue-500 mb-4">
+                  {i % 3 === 0 ? (
+                    <ShieldCheck className="mx-auto w-8 h-8" />
+                  ) : i % 3 === 1 ? (
+                    <Star className="mx-auto w-8 h-8" />
+                  ) : (
+                    <KeyRound className="mx-auto w-8 h-8" />
+                  )}
+                </div>
+                <h4 className="text-xl font-bold mb-2">
+                  {adv.title || "Feature"}
+                </h4>
+                <p className="text-sm text-gray-300">
+                  {adv.description || adv}
+                </p>
+              </motion.div>
+            ))}
           </div>
-          <h4 className="text-xl font-bold mb-2">
-            {adv.title || 'Feature'}
-          </h4>
-          <p className="text-sm text-gray-300">{adv.description || adv}</p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
       {/* Gallery */}
       <section id="gallery" className="w-full px-4 md:px-8 pb-16 relative z-10">
         <h3 className="text-4xl font-semibold mb-10 text-center text-white">
@@ -246,55 +250,55 @@ const Projects = () => {
 
         <div className="relative overflow-hidden scrollbar-hide group">
           <div
-            className="flex gap-4 w-[200%] whitespace-nowrap
-        animate-scroll-x [animation-play-state:running] group-hover:[animation-play-state:paused] md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 md:w-full md:whitespace-normal md:animate-none
+            style={{ "--scrollEnd": "50%" }} /* optional, for clarity */
+            className="
+        flex gap-4 w-max whitespace-nowrap             /* ← w-max instead of 200% */
+        animate-scroll-x
+        [animation-play-state:running] group-hover:[animation-play-state:paused]
+
+        md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 md:w-full
+        md:whitespace-normal md:animate-none
       "
           >
             {[
+              ...Object.entries(project.galleryCovers || {}), // original 4
               ...Object.entries(project.galleryCovers || {}),
-              ...Object.entries(project.galleryCovers || {}), // duplicate for loop
-            ].map(([cat, src], i, arr) => (
-              <div
-                key={cat + i}
-                className={`
-            /* mobile sizing */
-            min-w-[300px] max-w-[300px]
-
-            /* desktop full-row card */
+            ] // duplicate 4
+              .map(([cat, src], i, arr) => (
+                <div
+                  key={cat + i}
+                  className={`
+            min-w-[300px] max-w-[300px]            /* belt card width   */
             md:min-w-0 md:max-w-none md:w-full
             md:h-[45vh]
-
-            /* rounding + spacing */
             rounded-2xl overflow-hidden
             transition-transform duration-300 hover:scale-105
-
-            /* hide duplicates on desktop */
-            ${i >= arr.length / 2 ? "md:hidden" : ""}
+            ${i >= arr.length / 2 ? "md:hidden" : ""}  /* hide dupes desktop */
           `}
-              >
-                <img
-                  src={src}
-                  alt={cat}
-                  className="w-full h-full object-cover pointer-events-none"
-                />
-              </div>
-            ))}
+                >
+                  <img
+                    src={src}
+                    alt={cat}
+                    className="w-full h-full object-cover pointer-events-none"
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </section>
       {/* Features */}
-      
-      <section id="features" className="bg-black py-16 px-6">
-  <div className="max-w-6xl mx-auto">
-    <h3 className="text-4xl font-bold text-center mb-12 text-white">
-      Property Features
-    </h3>
 
-    <div className="relative overflow-x-hidden overflow-y-hidden scrollbar-hide group">
-      <div
-        /* slide 50 % of the belt for a seamless loop */
-        style={{ '--scrollEnd': '50%' }}
-        className="
+      <section id="features" className="bg-black py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-center mb-12 text-white">
+            Property Features
+          </h3>
+
+          <div className="relative overflow-x-hidden overflow-y-hidden scrollbar-hide group">
+            <div
+              /* slide 50 % of the belt for a seamless loop */
+              style={{ "--scrollEnd": "50%" }}
+              className="
           flex gap-4 w-max whitespace-nowrap
           animate-[scroll_32s_linear_infinite]         /* ⬅️ slower belt */
           [animation-play-state:running] group-hover:[animation-play-state:paused]
@@ -302,107 +306,113 @@ const Projects = () => {
           md:grid md:grid-cols-3 md:gap-6 md:w-full
           md:whitespace-normal md:animate-none
         "
-      >
-        {[...project.features, ...project.features].map((feature, idx, arr) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: (idx % project.features.length) * 0.1 }}
-            viewport={{ once: true }}
-            className={`
+            >
+              {[...project.features, ...project.features].map(
+                (feature, idx, arr) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: (idx % project.features.length) * 0.1,
+                    }}
+                    viewport={{ once: true }}
+                    className={`
               shrink-0 w-[240px] h-[200px]        /* ⬅️ new uniform size */
               md:w-full md:h-[200px]
               bg-white/5 p-4 rounded-2xl shadow-md text-center text-white
               whitespace-normal break-words space-y-2
               transition-transform duration-300 hover:scale-105
-              ${idx >= arr.length / 2 ? 'md:hidden' : ''}
+              ${idx >= arr.length / 2 ? "md:hidden" : ""}
             `}
-          >
-            <div className="text-blue-400">
-              <ShieldCheck className="mx-auto w-8 h-8" />
+                  >
+                    <div className="text-blue-400">
+                      <ShieldCheck className="mx-auto w-8 h-8" />
+                    </div>
+
+                    <h4 className="text-xl font-semibold">
+                      {feature.title || feature}
+                    </h4>
+
+                    <p className="text-sm text-gray-300">
+                      {feature.desc ||
+                        "24×7 security of your property residence and the society with surveillance of world standards."}
+                    </p>
+                  </motion.div>
+                )
+              )}
             </div>
-
-            <h4 className="text-xl font-semibold">
-              {feature.title || feature}
-            </h4>
-
-            <p className="text-sm text-gray-300">
-              {feature.desc ||
-                '24×7 security of your property residence and the society with surveillance of world standards.'}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
       {/* Contact */}
       <section id="contact" className="bg-black px-6 py-16">
-  <div
-    className="
+        <div
+          className="
       max-w-7xl mx-auto flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-8
     "
-  >
-    {/* Map */}
-    <div className="h-[300px] md:h-full">
-      {/* fills the parent’s height in desktop view */}
-      <Map projectTitle={project.title} latitude={project.lat} longitude={project.lng} />
-    </div>
-
-    {/* Form */}
-    <div className="w-full">
-      <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
-
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        {/* Name */}
-        <label className="block text-sm">
-          Name
-          <input
-            value={name}
-            onChange={e => setName(e.target.value)}
-            className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
-            placeholder="Jane Smith"
-            required
-          />
-        </label>
-        
-        {/* Phone */}
-        <label className="block text-sm">
-          Phone
-          <input
-            value={phone}
-            onChange={e => setPhone(e.target.value)}
-            className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
-            placeholder="+91 00000 00000"
-          />
-        </label>
-
-
-        {/* Email */}
-        <label className="block text-sm">
-          Email
-          <input
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
-            placeholder="jane@framer.com"
-            required
-          />
-        </label>
-
-        
-
-        <button
-          type="submit"
-          className="w-full px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded text-white font-medium"
         >
-          Submit
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
+          {/* Map */}
+          <div className="h-[300px] md:h-full">
+            {/* fills the parent’s height in desktop view */}
+            <Map
+              projectTitle={project.title}
+              latitude={project.lat}
+              longitude={project.lng}
+            />
+          </div>
+
+          {/* Form */}
+          <div className="w-full">
+            <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
+
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              {/* Name */}
+              <label className="block text-sm">
+                Name
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
+                  placeholder="Jane Smith"
+                  required
+                />
+              </label>
+
+              {/* Phone */}
+              <label className="block text-sm">
+                Phone
+                <input
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
+                  placeholder="+91 00000 00000"
+                />
+              </label>
+
+              {/* Email */}
+              <label className="block text-sm">
+                Email
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
+                  placeholder="jane@framer.com"
+                  required
+                />
+              </label>
+
+              <button
+                type="submit"
+                className="w-full px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded text-white font-medium"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );
