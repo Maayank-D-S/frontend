@@ -168,7 +168,7 @@ const Chat = () => {
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-4 right-4 w-[95%] max-w-[700px] h-[90vh] bg-black text-white rounded-xl shadow-2xl z-50 flex flex-col border border-gray-700">
+        <div className="fixed bottom-4 right-4 w-[95%] max-w-[700px] h-[80vh] bg-black text-white rounded-xl shadow-2xl z-50 flex flex-col border border-gray-700">
 
           <div className="bg-gray-950 p-4 rounded-t-xl flex items-center justify-between">
             <div className="flex items-center space-x-2">

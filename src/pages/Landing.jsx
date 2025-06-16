@@ -5,6 +5,7 @@ import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import Chat from "../components/Chat";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const team = [
   { name: "Aishwarya Verma",role:"Vice President Marketing", image: "/Profile/AV.jpg" },
@@ -79,88 +80,80 @@ const Landing = () => {
         </motion.div>
 
         {/* Header */}
-        <div className="relative w-full h-24 py-6 bg-black/70 z-30">
-          <div className="container mx-auto px-6 flex items-center justify-between h-full">
-            {/* Logo */}
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center">
-                <img src="/logo.png" alt="" className="h-10 w-10" />
-              </div>
-              <h1 className="text-2xl font-bold">WH&nbsp;Realtors</h1>
-            </div>
-
-            {/* Desktop nav */}
-            <nav className="hidden md:flex space-x-8 text-lg">
-              <a href="#about" className="hover:text-orange-400">
-                About
-              </a>
-              <a href="#gallery" className="hover:text-orange-400">
-                Our Projects
-              </a>
-              <a href="#services" className="hover:text-orange-400">
-                Services
-              </a>
-              <a href="#contact" className="hover:text-orange-400">
-                Contact
-              </a>
-            </nav>
-
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden text-white focus:outline-none z-40"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    menuOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
-                />
-              </svg>
-            </button>
+        <header className="relative w-full h-24 py-6 bg-black/70 z-30">
+        <div className="container mx-auto px-6 flex items-center justify-between h-full">
+          {/* Logo + brand */}
+          <div className="flex items-center space-x-4">
+            <img src="/logo.png" alt="logo" className="h-10 w-10" />
+            <h1 className="text-2xl font-bold">WH&nbsp;Realtors</h1>
           </div>
 
-          {/* Mobile dropdown */}
-          {menuOpen && (
-            <div className="md:hidden px-6 mt-2 space-y-2 bg-black/90 pb-4 z-40 absolute top-full left-0 w-full">
-              <a
-                href="#about"
-                className="block text-white hover:text-orange-400"
-              >
-                About
-              </a>
-              <a
-                href="#gallery"
-                className="block text-white hover:text-orange-400"
-              >
-                Our Projects
-              </a>
-              <a
-                href="#services"
-                className="block text-white hover:text-orange-400"
-              >
-                Services
-              </a>
-              <a
-                href="#contact"
-                className="block text-white hover:text-orange-400"
-              >
-                Contact
-              </a>
-            </div>
-          )}
+          {/* Desktop nav (unchanged) */}
+          <nav className="hidden md:flex space-x-8 text-lg">
+            <a href="#about" className="hover:text-orange-400">
+              About
+            </a>
+            <a href="#gallery" className="hover:text-orange-400">
+              Our Projects
+            </a>
+            <a href="#services" className="hover:text-orange-400">
+              Services
+            </a>
+            <a href="#contact" className="hover:text-orange-400">
+              Contact
+            </a>
+          </nav>
+
+          {/* Mobile menu toggler */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden text-white focus:outline-none z-40"
+          >
+            <FaBars className="h-8 w-8" />
+          </button>
         </div>
+      </header>
+
+      {/* ────────────── MOBILE OVERLAY ────────────── */}
+      <div
+        className={`
+          fixed inset-0 z-40 md:hidden
+          bg-black/40 backdrop-blur-md
+          transition-transform duration-300
+          ${menuOpen ? "translate-x-0" : "translate-x-full"}
+        `}
+      >
+        {/* slide-in panel (80 % width) */}
+        <div className="absolute right-0 top-0 h-full w-4/5 bg-black/70 p-6 flex flex-col">
+          {/* close icon */}
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="self-end text-white mb-8"
+          >
+            <FaTimes className="h-8 w-8" />
+          </button>
+
+          {/* mobile nav */}
+          <nav className="flex flex-col gap-8 text-lg text-white">
+            {[
+              ["About", "#about"],
+              ["Services", "#services"],
+              ["Our Projects", "#gallery"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="hover:text-orange-400"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    
 
         {/* Hero Content */}
         <div className="relative z-20 flex items-center justify-center h-[calc(100vh-96px)] px-6">
@@ -215,13 +208,6 @@ const Landing = () => {
           execution and absolute transparency. From how our projects are
           designed and built to how they’re marketed and sold — everything is
           powered by in-house AI and automation systems.
-        </p>
-
-        <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
-          Backed by a strong engineering foundation (IIT alumni) and a
-          relentless focus on innovation, we’re pioneering a new era of real
-          estate development where speed, trust and precision define the
-          experience.
         </p>
       </div>
 
@@ -336,7 +322,7 @@ const Landing = () => {
         style={{ '--scrollEnd': '50%' }}
         className="
           flex gap-6 w-max whitespace-nowrap
-          animate-scroll-x
+          animate-[scroll_60s_linear_infinite]
           [animation-play-state:running] group-hover:[animation-play-state:paused]
         "
       >
