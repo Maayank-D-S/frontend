@@ -103,7 +103,7 @@ export const projects = [
     title: "FIREFLY HOMES",
     description:
       "'FIREFLY HOMES' draws inspiration from the transformative 'FNG' expressway, a testament to progress and connectivity in the National Capital Region (NCR)…",
-    image: "/FH/Project.png",
+    image: "/FH/Project.jpg",
 
     gallery: {
       interior: [
@@ -132,8 +132,10 @@ export const projects = [
       ],
     },
     galleryCovers: {
-      interior: "/FH/Clubhouse.png", 
-      exterior: "/FH/Firefly.png",
+      interior: "/FH/Clubhouse.jpg", 
+      exterior: "/FH/Firefly.jpg",
+      layout: "/FH/Nice.jpg",
+      locality: "/FH/Project.jpg",
       
     },
 
@@ -172,7 +174,7 @@ export const projects = [
     id: "KRUPAL HABITAT",
     title: "KRUPAL HABITAT",
     description: "Premium residential plots in India’s first smart city — Dholera. The Krupal Habitat is a boutique plotted development located at the heart of Dholera SIR, Gujarat — a government-backed smart city initiative. Offering NA, NOC-approved and title-cleared plots presenting a rare opportunity to invest in one of India’s most ambitious infrastructure zones.",
-    image: "/KH/landing.jpeg",
+    image: "/KH/landing.jpg",
     gallery: {
       interior: ["https://www.whrealtors.in/dholera/Image_1.jpg", "https://www.whrealtors.in/dholera/Image_2.jpg","https://www.whrealtors.in/dholera/Image_3.jpg","https://www.whrealtors.in/dholera/Image_4.jpg"],
       exterior: ["https://www.whrealtors.in/dholera/Image_1.jpg", "https://www.whrealtors.in/dholera/Image_2.jpg","https://www.whrealtors.in/dholera/Image_3.jpg","https://www.whrealtors.in/dholera/Image_4.jpg"],
@@ -181,9 +183,9 @@ export const projects = [
     },
     galleryCovers: {
       interior: "/KH/Dholera5.png",   // display image for interior
-      exterior: "/KH/Gate.png",
+      exterior: "/KH/Gate.jpg",
       layout: "/KH/Landscape.png",
-      locality: "/KH/landing.jpeg",
+      locality: "/KH/landing.jpg",
     },
     
     video:"https://www.youtube.com/watch?v=qVqDnSjjklQ",
