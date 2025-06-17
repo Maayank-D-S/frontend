@@ -1,6 +1,7 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
+/* -------------------------------------------------- */
 function MobileGalleryCarousel({ covers }) {
   const images = Object.entries(covers || {});
   const [idx, setIdx] = useState(0);
@@ -10,16 +11,23 @@ function MobileGalleryCarousel({ covers }) {
   const next = () => setIdx((idx + 1) % total);
 
   return (
-    <div className="relative md:hidden">
+    /* outer container: hide any overflow so the page can’t pan sideways */
+    <div className="relative md:hidden overflow-hidden">
       {/* sliding track */}
       <div
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${idx * 100}%)` }}
       >
         {images.map(([cat, src]) => (
-          <div key={cat} className="min-w-full px-2">
-            <div className="rounded-2xl overflow-hidden">
-              <img src={src} alt={cat} className="w-full h-[60vh] object-cover" />
+          /* each slide is exactly the viewport width */
+          <div key={cat} className="w-full flex-shrink-0">
+            {/* margin creates the gap without enlarging width */}
+            <div className="mx-2 rounded-2xl overflow-hidden">
+              <img
+                src={src}
+                alt={cat}
+                className="w-full h-[60vh] object-cover"
+              />
             </div>
           </div>
         ))}
@@ -54,4 +62,4 @@ function MobileGalleryCarousel({ covers }) {
   );
 }
 
-export default MobileGalleryCarousel
+export default MobileGalleryCarousel;
