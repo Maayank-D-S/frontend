@@ -213,7 +213,7 @@ const Projects = () => {
             About Project
           </motion.h3>
 
-          <p className="text-xl text-gray-300 max-w-7xl mb-12 mx-auto text-center font-julius">
+          <p className="text-xl text-gray-300 max-w-7xl mb-12 mx-auto text-center">
             {project.description}
           </p>
 
