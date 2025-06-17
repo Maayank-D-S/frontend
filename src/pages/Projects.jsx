@@ -80,7 +80,6 @@ const Projects = () => {
              text-white rounded-full text-sm transition"
             >
               <ChevronLeft />
-              Back
             </a>
 
             {/* Logo and Title */}
