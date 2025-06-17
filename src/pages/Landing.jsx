@@ -20,14 +20,12 @@ const team = [
     image: "/Profile/MH.jpg",
   },
 
-  { name: "Jai Kumar", role: "Partner", image: "/Profile/JC.jpg" },
+  { name: "Jai Choudhary", role: "Partner", image: "/Profile/JC.jpg" },
   { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
-  { name: "Rajesh Panwar", role: "Partner", image: "/Profile/RP.jpg" },
+  
   { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
   { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
-  { name: "Chinki Rathi", role: "Sales Associate", image: "/Profile/CR.jpg" },
-  { name: "Jyotika", role: "Sales Associate", image: "/Profile/Jyotika.jpg" },
-  { name: "Keshav Sharma", role: "Sales Associate", image: "/Profile/KS.jpg" },
+  
   { name: "G D Sharma", role: "Channel Partner", image: "/Profile/GD.jpg" },
   { name: "SK Verma", role: "Channel Partner", image: "/Profile/SKV.jpg" },
 ];
