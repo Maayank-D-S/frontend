@@ -74,10 +74,11 @@ const Projects = () => {
           {/* Back button on the extreme left */}
           <div className="flex items-center space-x-4 w-full">
             <button
-              onClick={() => window.history.back()}
+              
               className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition"
             >
-              <ChevronLeft />
+              <a href="/"><ChevronLeft /></a>
+              
             </button>
 
             {/* Logo and Title */}
