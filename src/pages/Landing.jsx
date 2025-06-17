@@ -399,10 +399,10 @@ const Landing = () => {
                     alt={member.name}
                     className="rounded-xl w-full h-72 object-cover mb-4"
                   />
-                  <h4 className="text-lg font-semibold text-white font-julius">
+                  <h4 className="text-lg font-semibold text-white">
                     {member.name}
                   </h4>
-                  <p className="font-julius">{member.role}</p>
+                  <p >{member.role}</p>
                 </div>
               ))}
             </div>
