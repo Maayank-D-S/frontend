@@ -26,8 +26,8 @@ const ProjectCard = ({ project }) => {
         {/* Hover Overlay */}
         <div className="absolute bottom-4 left-4 right-4 bg-white dark:bg-gray-900 rounded-xl p-4 shadow-md opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-300 ease-out flex justify-between items-center">
           <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">{project.title}</p>
-            <p className="text-lg font-bold text-gray-900 dark:text-white">{project.price || '225.000'}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1 font-julius">{project.id}</p>
+            <p className="text-lg font-bold text-gray-900 dark:text-white font-julius">{project.title}</p>
           </div>
           <div className="text-sm text-blue-600 font-medium flex items-center">
             View <ArrowRight className="ml-1 w-4 h-4" />

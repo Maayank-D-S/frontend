@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           {/* Left: Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">WH REALTORS</h3>
+            <h3 className="text-2xl font-bold font-julius">Contact Us</h3>
             <ul className="text-base space-y-1 text-gray-300">
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5" />
@@ -20,7 +20,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5" />
-                <span className="text-gray-300">Address Goes Here</span>
+                <span className="text-gray-300">516, 5th floor Supertech Astralis, Sector 94b Noida, 201313</span>
               </li>
             </ul>
           </div>

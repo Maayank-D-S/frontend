@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        karma: ['Karma', 'serif'],
+        julius: ['Julius Sans One', 'sans-serif'],
+      },
       keyframes: {
         // move the belt by ONE copy (= 50 % of its width)
         'scroll-x': {

@@ -6,6 +6,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Building2, ShieldCheck, Star, KeyRound } from "lucide-react";
 import Footer from "../components/Footer";
 import Map from "../components/Map";
+import MobileGalleryCarousel from "../components/MobileGalleryCarousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Projects = () => {
   const { projectId } = useParams();
@@ -67,7 +69,7 @@ const Projects = () => {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Header */}
-      <header className="w-full py-6 px-4 border-b border-white/10 relative z-30">
+      <header className="fixed w-full py-6 px-4 bg-black/70 z-30 backdrop-blur">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Back button on the extreme left */}
           <div className="flex items-center space-x-4 w-full">
@@ -75,7 +77,7 @@ const Projects = () => {
               onClick={() => window.history.back()}
               className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition"
             >
-              ← Back
+              <ChevronLeft />
             </button>
 
             {/* Logo and Title */}
@@ -83,22 +85,25 @@ const Projects = () => {
               <div className="w-12 h-12 flex items-center justify-center rounded-lg">
                 <img src="/logo.png" alt="logo" className="h-10 w-10" />
               </div>
-              <h1 className="text-2xl font-bold">WH Realtors</h1>
+              <h1 className="text-2xl font-bold font-karma">WH Realtors</h1>
             </div>
           </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 text-sm font-medium text-white/90">
-            <a href="#about-project" className="hover:text-orange-400">
+            <a
+              href="#about-project"
+              className="hover:text-orange-400 font-julius"
+            >
               About
             </a>
-            <a href="#gallery" className="hover:text-orange-400">
+            <a href="#gallery" className="hover:text-orange-400 font-julius">
               Gallery
             </a>
-            <a href="#features" className="hover:text-orange-400">
+            <a href="#features" className="hover:text-orange-400 font-julius">
               Features
             </a>
-            <a href="#contact" className="hover:text-orange-400">
+            <a href="#contact" className="hover:text-orange-400 font-julius">
               Contact
             </a>
           </nav>
@@ -132,25 +137,25 @@ const Projects = () => {
           <div className="md:hidden px-6 mt-2 space-y-2 bg-black/90 pb-4 absolute top-full left-0 w-full z-40">
             <a
               href="#about-project"
-              className="block text-white hover:text-orange-400"
+              className="block text-white hover:text-orange-400 font-julius"
             >
               About
             </a>
             <a
               href="#gallery"
-              className="block text-white hover:text-orange-400"
+              className="block text-white hover:text-orange-400 font-julius"
             >
               Gallery
             </a>
             <a
               href="#features"
-              className="block text-white hover:text-orange-400"
+              className="block text-white hover:text-orange-400 font-julius"
             >
               Features
             </a>
             <a
               href="#contact"
-              className="block text-white hover:text-orange-400"
+              className="block text-white hover:text-orange-400 font-julius"
             >
               Contact
             </a>
@@ -158,14 +163,14 @@ const Projects = () => {
         )}
       </header>
       {/* Hero Title */}
-      <section className="text-center pt-10 pb-10 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-extrabold">{project.title}</h2>
+      <section className="text-center pt-28 md:pt-32 pb-10 z-10">
+        <h2 className="text-5xl md:text-6xl font-extrabold font-julius">{project.title}</h2>
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={`https://wa.me/${project.whatsapp || "910000000000"}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium font-julius"
           >
             <FaWhatsapp className="text-lg mr-2" /> Book Now
           </a>
@@ -173,7 +178,7 @@ const Projects = () => {
             href={project.brochure || "/sample_brochure.pdf"}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium"
+            className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium font-julius"
           >
             Download Brochure
           </a>
@@ -202,17 +207,17 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold mb-8 text-center"
+            className="text-4xl font-bold mb-8 text-center font-julius"
           >
             About Project
           </motion.h3>
 
-          <p className="text-xl text-gray-300 max-w-7xl mb-12 mx-auto text-center">
+          <p className="text-xl text-gray-300 max-w-7xl mb-12 mx-auto text-center font-julius">
             {project.description}
           </p>
 
           {/* grid now centers its children */}
-          <div className="grid md:grid-cols-3 gap-6 place-items-center">
+          <div className="grid md:grid-cols-3 gap-6 place-items-center ">
             {project.Advantages.map((adv, i) => (
               <motion.div
                 key={i}
@@ -220,7 +225,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white/5 p-6 rounded-2xl text-white text-center shadow-md w-full"
+                className="bg-white/5 p-6 rounded-2xl text-white text-center shadow-md w-full h-[210px]"
               >
                 <div className="text-blue-500 mb-4">
                   {i % 3 === 0 ? (
@@ -231,10 +236,10 @@ const Projects = () => {
                     <KeyRound className="mx-auto w-8 h-8" />
                   )}
                 </div>
-                <h4 className="text-xl font-bold mb-2">
+                <h4 className="text-xl font-bold mb-2 font-julius">
                   {adv.title || "Feature"}
                 </h4>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-gray-300 font-julius">
                   {adv.description || adv}
                 </p>
               </motion.div>
@@ -244,53 +249,30 @@ const Projects = () => {
       </section>
       {/* Gallery */}
       <section id="gallery" className="w-full px-4 md:px-8 pb-16 relative z-10">
-        <h3 className="text-4xl font-semibold mb-10 text-center text-white">
+        <h3 className="text-4xl font-semibold mb-10 text-center text-white font-julius">
           Project Gallery
         </h3>
 
-        <div className="relative overflow-hidden scrollbar-hide group">
-          <div
-            style={{ "--scrollEnd": "50%" }} /* optional, for clarity */
-            className="
-        flex gap-4 w-max whitespace-nowrap             /* ← w-max instead of 200% */
-        animate-scroll-x
-        [animation-play-state:running] group-hover:[animation-play-state:paused]
+        {/* ---------- MOBILE CAROUSEL (hidden on md+) ---------- */}
+        <MobileGalleryCarousel covers={project.galleryCovers} />
 
-        md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4 md:w-full
-        md:whitespace-normal md:animate-none
-      "
-          >
-            {[
-              ...Object.entries(project.galleryCovers || {}), // original 4
-              ...Object.entries(project.galleryCovers || {}),
-            ] // duplicate 4
-              .map(([cat, src], i, arr) => (
-                <div
-                  key={cat + i}
-                  className={`
-            min-w-[300px] max-w-[300px]            /* belt card width   */
-            md:min-w-0 md:max-w-none md:w-full
-            md:h-[45vh]
-            rounded-2xl overflow-hidden
-            transition-transform duration-300 hover:scale-105
-            ${i >= arr.length / 2 ? "md:hidden" : ""}  /* hide dupes desktop */
-          `}
-                >
-                  <img
-                    src={src}
-                    alt={cat}
-                    className="w-full h-full object-cover pointer-events-none"
-                  />
-                </div>
-              ))}
-          </div>
+        {/* ---------- DESKTOP GRID (hidden on mobile) ---------- */}
+        <div className="hidden md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4">
+          {Object.entries(project.galleryCovers || {}).map(([cat, src]) => (
+            <div
+              key={cat}
+              className="rounded-2xl overflow-hidden md:h-[45vh] transition-transform duration-300 hover:scale-105"
+            >
+              <img src={src} alt={cat} className="w-full h-full object-cover" />
+            </div>
+          ))}
         </div>
       </section>
       {/* Features */}
 
       <section id="features" className="bg-black py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold text-center mb-12 text-white">
+          <h3 className="text-4xl font-bold text-center mb-12 text-white font-julius">
             Property Features
           </h3>
 
@@ -319,8 +301,8 @@ const Projects = () => {
                     }}
                     viewport={{ once: true }}
                     className={`
-              shrink-0 w-[240px] h-[200px]        /* ⬅️ new uniform size */
-              md:w-full md:h-[200px]
+              shrink-0 w-[240px] h-[150px]        /* ⬅️ new uniform size */
+              md:w-full md:h-[150px]
               bg-white/5 p-4 rounded-2xl shadow-md text-center text-white
               whitespace-normal break-words space-y-2
               transition-transform duration-300 hover:scale-105
@@ -331,14 +313,14 @@ const Projects = () => {
                       <ShieldCheck className="mx-auto w-8 h-8" />
                     </div>
 
-                    <h4 className="text-xl font-semibold">
+                    <h4 className="text-xl font-semibold font-julius">
                       {feature.title || feature}
                     </h4>
 
-                    <p className="text-sm text-gray-300">
+                    {/* <p className="text-sm text-gray-300">
                       {feature.desc ||
                         "24×7 security of your property residence and the society with surveillance of world standards."}
-                    </p>
+                    </p> */}
                   </motion.div>
                 )
               )}
@@ -346,16 +328,40 @@ const Projects = () => {
           </div>
         </div>
       </section>
+
+      <section className="py-24 px-6 bg-black text-center">
+        {/* tiny kicker */}
+        <p className="text-sm tracking-widest uppercase text-gray-300 font-julius mb-2">
+          Legal Assurance
+        </p>
+
+        {/* big headline */}
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-julius text-white mb-10">
+          Secure Investment Guaranteed
+        </h2>
+
+        {/* download button */}
+        <a
+          href={project.legalDocs || "/sample_legal.pdf"}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition font-julius"
+        >
+          Download Legal Docs
+        </a>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="bg-black px-6 py-16">
-        <div
-          className="
-      max-w-7xl mx-auto flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-8
-    "
-        >
-          {/* Map */}
+        {/* heading */}
+        <h2 className="text-4xl font-bold text-center text-white mb-12 font-julius">
+          Project Location
+        </h2>
+
+        {/* map + form container */}
+        <div className="max-w-7xl mx-auto flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-8">
+          {/* Map -------------------------------------------------------------- */}
           <div className="h-[300px] md:h-full">
-            {/* fills the parent’s height in desktop view */}
             <Map
               projectTitle={project.title}
               latitude={project.lat}
@@ -363,9 +369,11 @@ const Projects = () => {
             />
           </div>
 
-          {/* Form */}
-          <div className="w-full">
-            <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
+          {/* Form ------------------------------------------------------------- */}
+          <div className="w-full md:h-full">
+            <h3 className="text-3xl font-bold mb-6 text-center font-julius">
+              Get In Touch
+            </h3>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
               {/* Name */}

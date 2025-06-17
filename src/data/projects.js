@@ -2,6 +2,7 @@ export const projects = [
   {
     id: "RAM VAN VILLAS",
     title: "RAM VAN VILLAS",
+    location:"abc",
     description:
       "Luxury villa plots nestled in the foothills of the Himalayas. Ramvan is a premium villa plotting project located in the lush green surroundings of Ramnagar, Uttarakhand — gateway to Jim Corbett National Park. Designed as a gated retreat, the project offers exclusive plots with access to a modern clubhouse and top-tier urban amenities, perfect for vacation homes or nature-inspired investment.",
     image: "/RamVan/VE.png",
@@ -101,6 +102,7 @@ export const projects = [
   {
     id: "FIREFLY HOMES",
     title: "FIREFLY HOMES",
+    location:"abc",
     description:
       "'FIREFLY HOMES' draws inspiration from the transformative 'FNG' expressway, a testament to progress and connectivity in the National Capital Region (NCR)…",
     image: "/FH/Project.jpg",
@@ -173,6 +175,7 @@ export const projects = [
   {
     id: "KRUPAL HABITAT",
     title: "KRUPAL HABITAT",
+    location: "DDHOLERA",
     description: "Premium residential plots in India’s first smart city — Dholera. The Krupal Habitat is a boutique plotted development located at the heart of Dholera SIR, Gujarat — a government-backed smart city initiative. Offering NA, NOC-approved and title-cleared plots presenting a rare opportunity to invest in one of India’s most ambitious infrastructure zones.",
     image: "/KH/landing.jpg",
     gallery: {
