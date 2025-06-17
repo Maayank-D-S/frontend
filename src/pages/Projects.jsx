@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import Map from "../components/Map";
 import MobileGalleryCarousel from "../components/MobileGalleryCarousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Chat from "../components/Chat";
 
 const Projects = () => {
   const { projectId } = useParams();
@@ -73,13 +74,14 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Back button on the extreme left */}
           <div className="flex items-center space-x-4 w-full">
-            <button
-              
-              className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition"
+            <a
+              href="/"
+              className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20
+             text-white rounded-full text-sm transition"
             >
-              <a href="/"><ChevronLeft /></a>
-              
-            </button>
+              <ChevronLeft />
+              Back
+            </a>
 
             {/* Logo and Title */}
             <div className="flex items-center space-x-3 ml-2">
@@ -165,19 +167,25 @@ const Projects = () => {
       </header>
       {/* Hero Title */}
       <section className="text-center pt-28 md:pt-32 pb-10 z-10">
-        <h2 className="text-5xl md:text-6xl font-extrabold font-julius">{project.title}</h2>
+        <h2 className="text-5xl md:text-6xl font-extrabold font-julius">
+          {project.title}
+        </h2>
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button onClick={()=> alert("Please fill the form, we will contact you on whatsapp and email shortly!")}>
-          <a
-            href="#contact"
-            
-            
-            className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium "
+          <button
+            onClick={() =>
+              alert(
+                "Please fill the form, we will contact you on whatsapp and email shortly!"
+              )
+            }
           >
-            <FaWhatsapp className="text-lg mr-2" /> Book Now
-          </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium "
+            >
+              <FaWhatsapp className="text-lg mr-2" /> Book Now
+            </a>
           </button>
-          
+
           <a
             href={project.BrochureUrl || "/sample_brochure.pdf"}
             target="_blank"
@@ -426,6 +434,7 @@ const Projects = () => {
         </div>
       </section>
       <Footer />
+      <Chat />
     </div>
   );
 };
