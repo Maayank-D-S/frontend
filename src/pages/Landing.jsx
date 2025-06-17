@@ -326,8 +326,8 @@ const Landing = () => {
                     >
                       <Building2 className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-3 font-julius">{s.label}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed font-julius">
+                    <h3 className="text-lg font-semibold mb-3">{s.label}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed ">
                       {s.desc}
                     </p>
                   </div>
