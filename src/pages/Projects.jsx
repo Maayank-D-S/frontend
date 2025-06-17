@@ -192,7 +192,7 @@ const Projects = () => {
             rel="noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium "
           >
-            Download Brochure
+            View Brochure
           </a>
         </div>
       </section>
@@ -359,7 +359,7 @@ const Projects = () => {
           rel="noreferrer"
           className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition"
         >
-          Download Legal Docs
+          View Legal Docs
         </a>
       </section>
 
