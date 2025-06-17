@@ -186,7 +186,7 @@ const Chat = () => {
               <p className="mb-2">Select a project:</p>
               <div className="flex flex-col gap-2">
                 {PROJECTS.map((name) => (
-                  <button key={name} className="bg-gray-700 hover:bg-gray-600 text-sm px-3 py-1 rounded text-left" onClick={() => { setStoredProject(name); setProject(name); }}>
+                  <button key={name} className="bg-gray-700 hover:bg-gray-600 text-sm px-3 py-1 rounded text-left h-200" onClick={() => { setStoredProject(name); setProject(name); }}>
                     {name}
                   </button>
                 ))}
@@ -196,9 +196,9 @@ const Chat = () => {
 
           {project && (
             <>
-              <div className="px-4 pt-2 text-xs text-right">
+              <div className="px-4 pt-2 text-lg text-right">
                 <button className="flex items-center gap-1 text-blue-400 hover:underline" onClick={handleNewChat}>
-                  <RefreshCw className="w-3 h-3" /> Start new chat
+                  <RefreshCw className="w-6 h-6" /> Start new chat
                 </button>
               </div>
 
