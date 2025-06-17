@@ -9,6 +9,16 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 
 const team = [
+  
+
+  { name: "Jai Choudhary", role: "Partner", image: "/Profile/JC.jpg" },
+  { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
+  
+  { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
+  { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
+  
+  { name: "G D Sharma", role: "Channel Partner", image: "/Profile/GD.jpg" },
+  { name: "SK Verma", role: "Channel Partner", image: "/Profile/SKV.jpg" },
   {
     name: "Aishwarya Verma",
     role: "Vice President Marketing",
@@ -19,15 +29,6 @@ const team = [
     role: "Vice President Sales",
     image: "/Profile/MH.jpg",
   },
-
-  { name: "Jai Choudhary", role: "Partner", image: "/Profile/JC.jpg" },
-  { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
-  
-  { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
-  { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
-  
-  { name: "G D Sharma", role: "Channel Partner", image: "/Profile/GD.jpg" },
-  { name: "SK Verma", role: "Channel Partner", image: "/Profile/SKV.jpg" },
 ];
 
 const Landing = () => {
@@ -370,7 +371,7 @@ const Landing = () => {
           <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
             Meet Our team
           </h2>
-          <p className="text-gray-300 mb-10 text-2xl text-center font-julius">
+          <p className="text-gray-300 mb-10 text-2xl text-center ">
             We are WH Realtors, passionate about shaping premium living
             experiences…
           </p>

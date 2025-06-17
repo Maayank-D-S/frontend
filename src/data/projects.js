@@ -67,7 +67,8 @@ export const projects = [
       }
       
     ],
-    BrochureUrl:"https://api.cloudinary.com/v1_1/dmxa6hssy/raw/download?api_key=285183573845388&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiY2I4YjU1OTgwYzgwNjViYTA2N2RmMWJhMDcyOGU4MDUiLCJ1c2VyX2V4dGVybmFsX2lkIjoiZTAxNTE1ZmEwMzJkYWUyODA5YTRiMmUxMDM0NjA0IiwidXNlcl9jdXN0b21faWQiOiJtc2tub3dzZXZ0QGdtYWlsLmNvbSIsImNvbXBvbmVudCI6ImNvbnNvbGUifQ%3D%3D&public_id=virtual_deal_room%2FTerm_Paper_aqvynp.pdf&signature=a97add5445faa35b710a06c9cd8524d9aea3d0da&source=ml&target_filename=Term_Paper_aqvynp.pdf&timestamp=1748688735&type=upload"
+    BrochureUrl:"https://drive.google.com/file/d/153ynPM_MOiVJh4q6KIfNcs8b3wngEZNG/view?usp=sharing",
+    legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",  
   },
   {
     id: "RAM VAN VILLAS",
@@ -163,7 +164,8 @@ export const projects = [
     ],
 
     BrochureUrl:
-      "https://api.cloudinary.com/v1_1/dmxa6hssy/raw/download?api_key=285183573845388&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiY2I4YjU1OTgwYzgwNjViYTA2N2RmMWJhMDcyOGU4MDUiLCJ1c2VyX2V4dGVybmFsX2lkIjoiZTAxNTE1ZmEwMzJkYWUyODA5YTRiMmUxMDM0NjA0IiwidXNlcl9jdXN0b21faWQiOiJtc2tub3dzZXZ0QGdtYWlsLmNvbSIsImNvbXBvbmVudCI6ImNvbnNvbGUifQ%3D%3D&public_id=virtual_deal_room%2FTerm_Paper_aqvynp.pdf&signature=a97add5445faa35b710a06c9cd8524d9aea3d0da&source=ml&target_filename=Term_Paper_aqvynp.pdf&timestamp=1748688735&type=upload",
+      "https://drive.google.com/file/d/15EWiW7LhKqKAiKoRLNw801qgrhd4kE3_/view?usp=sharing",
+    legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",  
   },
 
   
@@ -260,10 +262,11 @@ export const projects = [
       
     ],
 
-    BrochureUrl:
-      "https://api.cloudinary.com/v1_1/dmxa6hssy/raw/download?api_key=285183573845388&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiY2I4YjU1OTgwYzgwNjViYTA2N2RmMWJhMDcyOGU4MDUiLCJ1c2VyX2V4dGVybmFsX2lkIjoiZTAxNTE1ZmEwMzJkYWUyODA5YTRiMmUxMDM0NjA0IiwidXNlcl9jdXN0b21faWQiOiJtc2tub3dzZXZ0QGdtYWlsLmNvbSIsImNvbXBvbmVudCI6ImNvbnNvbGUifQ%3D%3D&public_id=virtual_deal_room%2FTerm_Paper_aqvynp.pdf&signature=a97add5445faa35b710a06c9cd8524d9aea3d0da&source=ml&target_filename=Term_Paper_aqvynp.pdf&timestamp=1748688735&type=upload",
+    BrochureUrl:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",
+    legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",  
   }
 ,
+
   
 
 ];

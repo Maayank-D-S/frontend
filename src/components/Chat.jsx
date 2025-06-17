@@ -164,7 +164,7 @@ const Chat = () => {
   return (
     <>
       <button onClick={() => setIsOpen(true)} className="fixed bottom-6 right-6 bg-white/10 hover:bg-gray-800 text-white p-4 rounded-full shadow-xl z-50">
-        <MessageCircle className="w-6 h-6" />
+        <MessageCircle className="w-10 h-10" />
       </button>
 
       {isOpen && (

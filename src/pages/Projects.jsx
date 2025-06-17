@@ -167,16 +167,19 @@ const Projects = () => {
       <section className="text-center pt-28 md:pt-32 pb-10 z-10">
         <h2 className="text-5xl md:text-6xl font-extrabold font-julius">{project.title}</h2>
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onClick={()=> alert("Please fill the form, we will contact you on whatsapp and email shortly!")}>
           <a
-            href={`https://wa.me/${project.whatsapp || "910000000000"}`}
-            target="_blank"
-            rel="noreferrer"
+            href="#contact"
+            
+            
             className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium "
           >
             <FaWhatsapp className="text-lg mr-2" /> Book Now
           </a>
+          </button>
+          
           <a
-            href={project.brochure || "/sample_brochure.pdf"}
+            href={project.BrochureUrl || "/sample_brochure.pdf"}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium "
@@ -343,7 +346,7 @@ const Projects = () => {
 
         {/* download button */}
         <a
-          href={project.legalDocs || "/sample_legal.pdf"}
+          href={project.legal || "/sample_legal.pdf"}
           target="_blank"
           rel="noreferrer"
           className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition"
