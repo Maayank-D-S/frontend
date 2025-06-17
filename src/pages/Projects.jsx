@@ -170,7 +170,7 @@ const Projects = () => {
             href={`https://wa.me/${project.whatsapp || "910000000000"}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium font-julius"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium "
           >
             <FaWhatsapp className="text-lg mr-2" /> Book Now
           </a>
@@ -178,7 +178,7 @@ const Projects = () => {
             href={project.brochure || "/sample_brochure.pdf"}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium font-julius"
+            className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium "
           >
             Download Brochure
           </a>
@@ -236,10 +236,10 @@ const Projects = () => {
                     <KeyRound className="mx-auto w-8 h-8" />
                   )}
                 </div>
-                <h4 className="text-xl font-bold mb-2 font-julius">
+                <h4 className="text-xl font-bold mb-2 ">
                   {adv.title || "Feature"}
                 </h4>
-                <p className="text-sm text-gray-300 font-julius">
+                <p className="text-sm text-gray-300 ">
                   {adv.description || adv}
                 </p>
               </motion.div>
@@ -313,7 +313,7 @@ const Projects = () => {
                       <ShieldCheck className="mx-auto w-8 h-8" />
                     </div>
 
-                    <h4 className="text-xl font-semibold font-julius">
+                    <h4 className="text-xl font-semibold ">
                       {feature.title || feature}
                     </h4>
 
@@ -345,7 +345,7 @@ const Projects = () => {
           href={project.legalDocs || "/sample_legal.pdf"}
           target="_blank"
           rel="noreferrer"
-          className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition font-julius"
+          className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition"
         >
           Download Legal Docs
         </a>

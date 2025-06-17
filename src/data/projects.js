@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "RAM VAN VILLAS",
     title: "RAM VAN VILLAS",
-    location:"abc",
+    location:"Ramnagar, Uttarakhand",
     description:
       "Luxury villa plots nestled in the foothills of the Himalayas. Ramvan is a premium villa plotting project located in the lush green surroundings of Ramnagar, Uttarakhand — gateway to Jim Corbett National Park. Designed as a gated retreat, the project offers exclusive plots with access to a modern clubhouse and top-tier urban amenities, perfect for vacation homes or nature-inspired investment.",
     image: "/RamVan/VE.png",
@@ -102,9 +102,9 @@ export const projects = [
   {
     id: "FIREFLY HOMES",
     title: "FIREFLY HOMES",
-    location:"abc",
+    location:"Lansdowne, Uttarakhand",
     description:
-      "'FIREFLY HOMES' draws inspiration from the transformative 'FNG' expressway, a testament to progress and connectivity in the National Capital Region (NCR)…",
+      "Welcome to Firefly Homes. How would you describe the feeling of being surrounded by enchanting landscapes? That feeling of gazing into celestial skies stretching above infinity and above. That rush of happiness which washes over you when you are one with nature. Welcome to Firefly Homes, where every moment is a wonder. ",
     image: "/FH/Project.jpg",
 
     gallery: {
@@ -145,27 +145,51 @@ export const projects = [
     category: "Prime Retail and Commercial Unit",
     duration: "24 months",
     teamSize: "80 units",
+    lat:29.7874968,
+    lng:78.6072432,
 
     Advantages: [
-      "Connected to Yamuna Expressway",
-      "Adjacent to Noida-Greater Noida Expressway",
-      "Only 16 KMs from DND Flyway",
-      "Convenient proximity to upcoming Jewar International Airport",
-      "Walking distance from Sector 142 (350 meters) & Sector 143 (1.5 KMs) Metro Stations",
+      {
+        title: "Himalayan Views, Every Day",
+        description: "Wake up to panoramic mountain vistas from every villa.",
+      },
+      {
+        title: "Serene Living on a Forested 7-Acre Estate",
+        description: "Nature-wrapped villas designed for peace, privacy, and wellness.",
+      },
+      {
+        title:" Luxury Homes, Heritage Charm",
+        description:"Modern comforts blended with colonial-era architectural inspiration."
+
+      }
     ],
 
     features: [
-      "21 High Speed Elevators in Each Tower",
-      "33 Feet High Entrance Lobby",
-      "53,000 Sq. Ft. Office Floor Plate",
-      "Bus Parking Inside Campus",
-      "Multi-Level Car Parking (3 Floors for 3100+ Cars)",
-      "EV Charging Stations",
-      "Clubhouse Facility",
-      "30–40% Green Area",
-      "Interconnected Hi-Street Retail",
-      "Cycling & Jogging Tracks",
-      "3 Entry and Exit Gates",
+      {
+        title:"Gated community",
+        description:"Controlled access point designed for future safety and gated community feel."
+      },
+      {
+        title:"24x7 security",
+        description:"Precision layout and markings ensure clarity and hassle-free registration."
+      },
+      {
+        title:"CCTV surveillance",
+        description:"Well-planned road network with primary and secondary access for smooth movement."
+      },
+      {
+        title:"Café & Restaurant",
+        description:"Modern infrastructure with concealed utility lines for a clean and efficient layout."
+      },
+      {
+        title:"Clubhouse",
+        description:"Thoughtfully planned open spaces for environment-friendly living and aesthetic appeal."
+      },
+      {
+        title:"Children’s play area",
+        description:"Energy infrastructure in place to support future residential and commercial development."
+      }
+      
     ],
 
     BrochureUrl:
