@@ -77,7 +77,7 @@ const Projects = () => {
             <a
               href="/"
               className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20
-             text-white rounded-full text-sm transition"
+            text-white rounded-full text-sm transition"
             >
               <ChevronLeft />
             </a>

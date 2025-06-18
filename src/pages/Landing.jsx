@@ -263,7 +263,7 @@ const Landing = () => {
       <section id="gallery" className="py-20 px-6 bg-black">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-white font-julius">
-            Featured Properties
+            Our Projects
           </h2>
 
           {/* stack on mobile | grid on md+ */}
@@ -371,7 +371,7 @@ const Landing = () => {
           <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
             Meet Our team
           </h2>
-          <p className="text-gray-300 mb-10 text-2xl text-center ">
+          <p className="text-gray-300 mb-10 text-xl text-center ">
             We are WH Realtors, passionate about shaping premium living
             experiences…
           </p>
