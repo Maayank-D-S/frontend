@@ -4,7 +4,7 @@ export const projects = [
     title: "KRUPAL HABITAT",
     location: "DHOLERA",
     description: "Premium residential plots in India’s first smart city — Dholera. The Krupal Habitat is a boutique plotted development located at the heart of Dholera SIR, Gujarat — a government-backed smart city initiative. Offering NA, NOC-approved and title-cleared plots presenting a rare opportunity to invest in one of India’s most ambitious infrastructure zones.",
-    image: "/KH/landing.jpg",
+    image: "/KH/main.png",
     gallery: {
       interior: ["https://www.whrealtors.in/dholera/Image_1.jpg", "https://www.whrealtors.in/dholera/Image_2.jpg","https://www.whrealtors.in/dholera/Image_3.jpg","https://www.whrealtors.in/dholera/Image_4.jpg"],
       exterior: ["https://www.whrealtors.in/dholera/Image_1.jpg", "https://www.whrealtors.in/dholera/Image_2.jpg","https://www.whrealtors.in/dholera/Image_3.jpg","https://www.whrealtors.in/dholera/Image_4.jpg"],
@@ -12,7 +12,7 @@ export const projects = [
       locality: ["https://www.whrealtors.in/dholera/Image_1.jpg", "https://www.whrealtors.in/dholera/Image_2.jpg","https://www.whrealtors.in/dholera/Image_3.jpg","https://www.whrealtors.in/dholera/Image_4.jpg"],
     },
     galleryCovers: {
-      interior: "/KH/Dholera5.png",   // display image for interior
+      interior: "/KH/main.png",   // display image for interior
       exterior: "/KH/Gate.jpg",
       layout: "/KH/Landscape.png",
       locality: "/KH/landing.jpg",
@@ -67,7 +67,7 @@ export const projects = [
       }
       
     ],
-    BrochureUrl:"https://drive.google.com/file/d/153ynPM_MOiVJh4q6KIfNcs8b3wngEZNG/view?usp=sharing",
+    BrochureUrl:"https://drive.google.com/file/d/16DMeLfuD_O94luvxDvgDaZ3b0sCVGGPB/view?usp=sharing",
     legal:"https://drive.google.com/file/d/15ySMtaeSc5s3vPFq_xUdCvImp9JC8jPz/view?usp=sharing",  
   },
   {

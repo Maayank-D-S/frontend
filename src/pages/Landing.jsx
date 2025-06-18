@@ -11,22 +11,22 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const team = [
   
 
-  { name: "Jai Choudhary", role: "Partner", image: "/Profile/JC.jpg" },
+  
   { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
   
   { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
   { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
   
-  { name: "G D Sharma", role: "Channel Partner", image: "/Profile/GD.jpg" },
-  { name: "Suniil Verma", role: "Channel Partner", image: "/Profile/SKV.jpg" },
+  { name: "G D Sharma",  image: "/Profile/GD.jpg" },
+  { name: "Suniil Verma",  image: "/Profile/SKV.jpg" },
   {
     name: "Aishwarya Verma",
-    role: "Vice President Marketing",
+    
     image: "/Profile/AV.jpg",
   },
   {
     name: "Manisha Handa",
-    role: "Vice President Sales",
+    
     image: "/Profile/MH.jpg",
   },
 ];
@@ -391,17 +391,19 @@ const Landing = () => {
               {[...team, ...team].map((member, idx) => (
                 <div
                   key={`${member.name}-${idx}`}
-                  className="shrink-0 w-64 bg-white/5 rounded-2xl p-4 text-center"
+                  className="shrink-0 w-64 bg-white/10 rounded-2xl p-4 text-center"
                 >
                   <img
                     src={member.image}
                     alt={member.name}
                     className="rounded-xl w-full h-72 object-cover mb-4"
                   />
-                  <h4 className="text-lg font-semibold text-white">
+                  <h4 className="text-lg font-semibold text-white font-julius">
                     {member.name}
                   </h4>
-                  <p >{member.role}</p>
+                  {member.role && (
+                    <p className="text-gray-400 text-sm ">{member.role}</p>
+                  )}
                 </div>
               ))}
             </div>
