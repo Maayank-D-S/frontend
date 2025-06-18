@@ -18,7 +18,7 @@ const team = [
   { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
   
   { name: "G D Sharma", role: "Channel Partner", image: "/Profile/GD.jpg" },
-  { name: "SK Verma", role: "Channel Partner", image: "/Profile/SKV.jpg" },
+  { name: "Suniil Verma", role: "Channel Partner", image: "/Profile/SKV.jpg" },
   {
     name: "Aishwarya Verma",
     role: "Vice President Marketing",
