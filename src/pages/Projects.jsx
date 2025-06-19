@@ -71,28 +71,35 @@ const Projects = () => {
     <div className="bg-black text-white min-h-screen">
       {/* Header */}
       <header className="fixed w-full py-6 px-4 bg-black/70 z-30 backdrop-blur">
+        <div className="w-fit mb-2">
+          
+        </div>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Back button on the extreme left */}
+          <a
+            href="/"
+            className="flex items-center gap-2 px-3  bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition"
+          >
+            <ChevronLeft />
+          </a>
           <div className="flex items-center space-x-4 w-full">
-            <a
-              href="/"
-              className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20
-            text-white rounded-full text-sm transition"
-            >
-              <ChevronLeft />
-            </a>
-
             {/* Logo and Title */}
             <div className="flex items-center space-x-3 ml-2">
-              <div className="w-12 h-12 flex items-center justify-center rounded-lg">
-                <img src="/logo.png" alt="logo" className="h-10 w-10" />
+              <div className="w-32 h-16 flex items-center justify-center rounded-lg">
+                <img src="/logo4.png" alt="logo" className="h-15 w-28" />
               </div>
-              <h1 className="text-2xl font-bold font-karma">WH Realtors</h1>
+              
             </div>
           </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 text-sm font-medium text-white/90">
+          <a
+              href="/"
+              className="hover:text-orange-400 font-julius"
+            >
+              Home
+            </a>
             <a
               href="#about-project"
               className="hover:text-orange-400 font-julius"
@@ -137,6 +144,12 @@ const Projects = () => {
         {/* Mobile Dropdown */}
         {menuOpen && (
           <div className="md:hidden px-6 mt-2 space-y-2 bg-black/90 pb-4 absolute top-full left-0 w-full z-40">
+            <a
+              href="/"
+              className="block text-white hover:text-orange-400 font-julius"
+            >
+              Home
+            </a>
             <a
               href="#about-project"
               className="block text-white hover:text-orange-400 font-julius"
@@ -282,63 +295,51 @@ const Projects = () => {
       {/* Features */}
 
       <section id="features" className="bg-black py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold text-center mb-12 text-white font-julius">
-            Property Features
-          </h3>
+  <div className="max-w-6xl mx-auto">
+    <h3 className="text-4xl font-bold text-center mb-12 text-white font-julius">
+      Property Features
+    </h3>
 
-          <div className="relative overflow-x-hidden overflow-y-hidden scrollbar-hide group">
-            <div
-              /* slide 50 % of the belt for a seamless loop */
-              style={{ "--scrollEnd": "50%" }}
-              className="
+    {/* Manual scroll belt (mobile) | grid (desktop) */}
+    <div className="relative overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6 md:overflow-x-hidden">
+      <div
+        className="
           flex gap-4 w-max whitespace-nowrap
-          animate-[scroll_32s_linear_infinite]         /* ⬅️ slower belt */
-          [animation-play-state:running] group-hover:[animation-play-state:paused]
-
           md:grid md:grid-cols-3 md:gap-6 md:w-full
-          md:whitespace-normal md:animate-none
+          md:whitespace-normal
         "
-            >
-              {[...project.features, ...project.features].map(
-                (feature, idx, arr) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: (idx % project.features.length) * 0.1,
-                    }}
-                    viewport={{ once: true }}
-                    className={`
-              shrink-0 w-[240px] h-[150px]        /* ⬅️ new uniform size */
+      >
+        {project.features.map((feature, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: idx * 0.1,
+            }}
+            viewport={{ once: true }}
+            className="
+              shrink-0 w-[240px] h-[150px]
               md:w-full md:h-[150px]
               bg-white/5 p-4 rounded-2xl shadow-md text-center text-white
               whitespace-normal break-words space-y-2
               transition-transform duration-300 hover:scale-105
-              ${idx >= arr.length / 2 ? "md:hidden" : ""}
-            `}
-                  >
-                    <div className="text-blue-400">
-                      <ShieldCheck className="mx-auto w-8 h-8" />
-                    </div>
-
-                    <h4 className="text-xl font-semibold ">
-                      {feature.title || feature}
-                    </h4>
-
-                    {/* <p className="text-sm text-gray-300">
-                      {feature.desc ||
-                        "24×7 security of your property residence and the society with surveillance of world standards."}
-                    </p> */}
-                  </motion.div>
-                )
-              )}
+            "
+          >
+            <div className="text-blue-400">
+              <ShieldCheck className="mx-auto w-8 h-8" />
             </div>
-          </div>
-        </div>
-      </section>
+
+            <h4 className="text-xl font-semibold">
+              {feature.title || feature}
+            </h4>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="py-24 px-6 bg-black text-center">
         {/* tiny kicker */}

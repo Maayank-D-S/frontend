@@ -7,28 +7,28 @@ import Footer from "../components/Footer";
 import Chat from "../components/Chat";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-
 const team = [
-  
-
-  
   { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
-  
-  { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
   { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
-  
-  { name: "G D Sharma",  image: "/Profile/GD.jpg" },
-  { name: "Suniil Verma",  image: "/Profile/SKV.jpg" },
+  { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
   {
-    name: "Aishwarya Verma",
-    
-    image: "/Profile/AV.jpg",
-  },
-  {
-    name: "Manisha Handa",
-    
+    name: "Manisha",
+
     image: "/Profile/MH.jpg",
   },
+  { name: "G D Sharma", role: "Working partner", image: "/Profile/GD.jpg" },
+
+  { name: "Suniil Verma", role: "Working partner", image: "/Profile/SKV.jpg" },
+  { name: "Pankaj Bhati", role: "Working partner", image: "/Profile/PB.jpg" },
+
+  {
+    name: "Aishwarya",
+
+    image: "/Profile/AV.jpg",
+  },
+  { name: "Jyotika", image: "/Profile/Jyotika.jpg" },
+  { name: "Keshav", image: "/Profile/KS.jpg" },
+  { name: "Chinki", image: "/Profile/CR.jpg" },
 ];
 
 const Landing = () => {
@@ -62,7 +62,6 @@ const Landing = () => {
 
   const prev = () => setIndex((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setIndex((i) => (i === total - 1 ? 0 : i + 1));
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -117,8 +116,8 @@ const Landing = () => {
           <div className="container mx-auto px-6 flex items-center justify-between h-full">
             {/* Logo + brand */}
             <div className="flex items-center space-x-4">
-              <img src="/logo.png" alt="logo" className="h-10 w-10" />
-              <h1 className="text-2xl font-karma text-center">WH&nbsp;Realtors</h1>
+              <img src="/logo4.png" alt="logo" className="h-15 w-28" />
+              {/* <h1 className="text-2xl font-karma text-center">WH&nbsp;Realtors</h1> */}
             </div>
 
             {/* Desktop nav (unchanged) */}
@@ -204,7 +203,8 @@ const Landing = () => {
               transition={{ duration: 1.2 }}
               className="text-xl md:text-2xl text-gray-300 font-julius"
             >
-              Discover the most exclusive properties with <p className="karma">WH&nbsp;Realtors</p>.
+              Discover the most exclusive properties with{" "}
+              <p className="karma">WH&nbsp;Realtors</p>.
             </motion.p>
           </div>
         </div>
@@ -212,52 +212,50 @@ const Landing = () => {
 
       {/* ────────── DESCRIPTION ────────── */}
       <section id="about" className="py-20 px-6 bg-black">
-  <div className="container mx-auto max-w-5xl">
-    <div
-      className="
+        <div className="container mx-auto max-w-5xl">
+          <div
+            className="
         bg-black rounded-2xl flex flex-col items-center
         gap-8 p-8 md:px-20 md:py-16
       "
-    >
-      {/* ─── Logo ─── */}
-      <img
-        src="/logo.png"
-        alt="WH Realtors Logo"
-        className="w-24 sm:w-28 md:w-40 lg:w-48 h-auto object-contain"
-      />
-
-      {/* ─── Brand name ─── */}
-      <h1 className="text-3xl md:text-5xl font-extrabold font-karma text-white">
-        WH Realtors
-      </h1>
-
-      {/* Divider */}
-      <div className="w-64 h-px bg-gray-600" />
-
-      {/* ─── Tagline ─── */}
-      <h2 className="text-xl md:text-2xl font-medium font-julius text-gray-300 text-center">
-        We are the Developers of Tomorrow.
-      </h2>
-
-      {/* ─── Copy ─── */}
-      <div className="space-y-6 max-w-3xl">
-        {[
-          "At Wild Habitat, we’re re-imagining what it means to build.",
-          "We’re not just real-estate developers — we’re engineers, technologists, and designers on a mission to transform how real estate is created, sold, and experienced.",
-          
-        ].map((line) => (
-          <p
-            key={line}
-            className="text-lg md:text-xl text-gray-400 font-julius leading-relaxed text-center"
           >
-            {line}
-          </p>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+            {/* ─── Logo ─── */}
+            <img
+              src="/logo.png"
+              alt="WH Realtors Logo"
+              className="w-24 sm:w-28 md:w-40 lg:w-48 h-auto object-contain"
+            />
 
+            {/* ─── Brand name ─── */}
+            <h1 className="text-3xl md:text-5xl font-extrabold font-karma text-white">
+              WH Realtors
+            </h1>
+
+            {/* Divider */}
+            <div className="w-64 h-px bg-gray-600" />
+
+            {/* ─── Tagline ─── */}
+            <h2 className="text-xl md:text-2xl font-medium font-julius text-gray-300 text-center">
+              We are the Developers of Tomorrow.
+            </h2>
+
+            {/* ─── Copy ─── */}
+            <div className="space-y-6 max-w-3xl">
+              {[
+                "At Wild Habitat, we’re re-imagining what it means to build.",
+                "We’re not just real-estate developers — we’re engineers, technologists, and designers on a mission to transform how real estate is created, sold, and experienced.",
+              ].map((line) => (
+                <p
+                  key={line}
+                  className="text-lg md:text-xl text-gray-400 font-julius leading-relaxed text-center"
+                >
+                  {line}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ────────── GALLERY ────────── */}
       <section id="gallery" className="py-20 px-6 bg-black">
@@ -279,7 +277,9 @@ const Landing = () => {
 
       <section id="services" className="py-20 px-6 bg-black">
         <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white font-julius">We Offer</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white font-julius">
+            We Offer
+          </h2>
 
           {/* -------- DESKTOP GRID -------- */}
           <div className="hidden md:grid grid-cols-3 gap-8 mx-auto max-w-[90%]">
@@ -367,54 +367,46 @@ const Landing = () => {
 
       {/* ────────── ABOUT US ────────── */}
       <section className="py-20 px-6 bg-black">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
-            Meet Our team
-          </h2>
-          <p className="text-gray-300 mb-10 text-xl text-center ">
-            We are WH Realtors, passionate about shaping premium living
-            experiences…
-          </p>
+  <div className="container mx-auto">
+    <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
+      Meet Our team
+    </h2>
+    <p className="text-gray-300 mb-10 text-xl text-center">
+      We are WH Realtors, passionate about shaping premium living experiences…
+    </p>
 
-          {/* Auto-scroll belt — same for mobile & desktop */}
-          <div className="relative overflow-x-hidden scrollbar-hide group">
-            {/* slide half the belt (-50 %) for endless 1-2-3-4-1-2-… loop */}
-            <div
-              style={{ "--scrollEnd": "50%" }}
-              className="
-          flex gap-6 w-max whitespace-nowrap
-          animate-[scroll_60s_linear_infinite]
-          [animation-play-state:running] group-hover:[animation-play-state:paused]
-        "
-            >
-              {/* duplicate array → seamless loop */}
-              {[...team, ...team].map((member, idx) => (
-                <div
-                  key={`${member.name}-${idx}`}
-                  className="shrink-0 w-64 bg-white/10 rounded-2xl p-4 text-center"
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="rounded-xl w-full h-72 object-cover mb-4"
-                  />
-                  <h4 className="text-lg font-semibold text-white font-julius">
-                    {member.name}
-                  </h4>
-                  {member.role && (
-                    <p className="text-gray-400 text-sm ">{member.role}</p>
-                  )}
-                </div>
-              ))}
-            </div>
+    {/* Manual scroll belt */}
+    <div className="relative overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6">
+      <div className="flex gap-6 w-max whitespace-nowrap">
+        {team.map((member, idx) => (
+          <div
+            key={idx}
+            className="shrink-0 w-64 bg-white/10 rounded-2xl p-4 text-center"
+          >
+            <img
+              src={member.image}
+              alt={member.name}
+              className="rounded-xl w-full h-72 object-cover mb-4"
+            />
+            <h4 className="text-lg font-semibold text-white font-julius">
+              {member.name}
+            </h4>
+            {member.role && (
+              <p className="text-gray-400 text-sm">{member.role}</p>
+            )}
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ────────── CONTACT ────────── */}
       <section id="contact" className="py-20 px-6 bg-black">
         <div className="container mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white font-julius">Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white font-julius">
+            Get In Touch
+          </h2>
 
           {/* -------------- FORM -------------- */}
           <form className="space-y-6 text-left" onSubmit={handleSubmit}>
