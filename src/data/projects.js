@@ -169,103 +169,103 @@ export const projects = [
   },
 
   
-  {
-    id: "FIREFLY HOMES",
-    title: "FIREFLY HOMES",
-    location:"Lansdowne, Uttarakhand",
-    description:
-      "Welcome to Firefly Homes. How would you describe the feeling of being surrounded by enchanting landscapes? That feeling of gazing into celestial skies stretching above infinity and above. That rush of happiness which washes over you when you are one with nature. Welcome to Firefly Homes, where every moment is a wonder. ",
-    image: "/FH/Project.jpg",
+//   {
+//     id: "FIREFLY HOMES",
+//     title: "FIREFLY HOMES",
+//     location:"Lansdowne, Uttarakhand",
+//     description:
+//       "Welcome to Firefly Homes. How would you describe the feeling of being surrounded by enchanting landscapes? That feeling of gazing into celestial skies stretching above infinity and above. That rush of happiness which washes over you when you are one with nature. Welcome to Firefly Homes, where every moment is a wonder. ",
+//     image: "/FH/Project.jpg",
 
-    gallery: {
-      interior: [
-        "https://www.whrealtors.in/one-fng/Image_1.jpg",
-        "https://www.whrealtors.in/one-fng/Image_2.jpg",
-        "https://www.whrealtors.in/one-fng/Image_3.jpg",
-        "https://www.whrealtors.in/one-fng/Image_4.jpg",
-      ],
-      exterior: [
-        "https://www.whrealtors.in/one-fng/Image_1.jpg",
-        "https://www.whrealtors.in/one-fng/Image_2.jpg",
-        "https://www.whrealtors.in/one-fng/Image_3.jpg",
-        "https://www.whrealtors.in/one-fng/Image_4.jpg",
-      ],
-      layout: [
-        "https://www.whrealtors.in/one-fng/Image_1.jpg",
-        "https://www.whrealtors.in/one-fng/Image_2.jpg",
-        "https://www.whrealtors.in/one-fng/Image_3.jpg",
-        "https://www.whrealtors.in/one-fng/Image_4.jpg",
-      ],
-      locality: [
-        "https://www.whrealtors.in/one-fng/Image_1.jpg",
-        "https://www.whrealtors.in/one-fng/Image_2.jpg",
-        "https://www.whrealtors.in/one-fng/Image_3.jpg",
-        "https://www.whrealtors.in/one-fng/Image_4.jpg",
-      ],
-    },
-    galleryCovers: {
-      interior: "/FH/Clubhouse.jpg", 
-      exterior: "/FH/Firefly.jpg",
-      layout: "/FH/Nice.jpg",
-      locality: "/FH/Project.jpg",
+//     gallery: {
+//       interior: [
+//         "https://www.whrealtors.in/one-fng/Image_1.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_2.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_3.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_4.jpg",
+//       ],
+//       exterior: [
+//         "https://www.whrealtors.in/one-fng/Image_1.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_2.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_3.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_4.jpg",
+//       ],
+//       layout: [
+//         "https://www.whrealtors.in/one-fng/Image_1.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_2.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_3.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_4.jpg",
+//       ],
+//       locality: [
+//         "https://www.whrealtors.in/one-fng/Image_1.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_2.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_3.jpg",
+//         "https://www.whrealtors.in/one-fng/Image_4.jpg",
+//       ],
+//     },
+//     galleryCovers: {
+//       interior: "/FH/Clubhouse.jpg", 
+//       exterior: "/FH/Firefly.jpg",
+//       layout: "/FH/Nice.jpg",
+//       locality: "/FH/Project.jpg",
       
-    },
+//     },
 
-    video: "https://www.youtube.com/watch?v=qVqDnSjjklQ",
-    category: "Prime Retail and Commercial Unit",
-    duration: "24 months",
-    teamSize: "80 units",
-    lat:29.7874968,
-    lng:78.6072432,
+//     video: "https://www.youtube.com/watch?v=qVqDnSjjklQ",
+//     category: "Prime Retail and Commercial Unit",
+//     duration: "24 months",
+//     teamSize: "80 units",
+//     lat:29.7874968,
+//     lng:78.6072432,
 
-    Advantages: [
-      {
-        title: "Himalayan Views, Every Day",
-        description: "Wake up to panoramic mountain vistas from every villa.",
-      },
-      {
-        title: "Serene Living on a Forested 7-Acre Estate",
-        description: "Nature-wrapped villas designed for peace, privacy, and wellness.",
-      },
-      {
-        title:" Luxury Homes, Heritage Charm",
-        description:"Modern comforts blended with colonial-era architectural inspiration."
+//     Advantages: [
+//       {
+//         title: "Himalayan Views, Every Day",
+//         description: "Wake up to panoramic mountain vistas from every villa.",
+//       },
+//       {
+//         title: "Serene Living on a Forested 7-Acre Estate",
+//         description: "Nature-wrapped villas designed for peace, privacy, and wellness.",
+//       },
+//       {
+//         title:" Luxury Homes, Heritage Charm",
+//         description:"Modern comforts blended with colonial-era architectural inspiration."
 
-      }
-    ],
+//       }
+//     ],
 
-    features: [
-      {
-        title:"Gated community",
-        description:"Controlled access point designed for future safety and gated community feel."
-      },
-      {
-        title:"24x7 security",
-        description:"Precision layout and markings ensure clarity and hassle-free registration."
-      },
-      {
-        title:"CCTV surveillance",
-        description:"Well-planned road network with primary and secondary access for smooth movement."
-      },
-      {
-        title:"Café & Restaurant",
-        description:"Modern infrastructure with concealed utility lines for a clean and efficient layout."
-      },
-      {
-        title:"Clubhouse",
-        description:"Thoughtfully planned open spaces for environment-friendly living and aesthetic appeal."
-      },
-      {
-        title:"Children’s play area",
-        description:"Energy infrastructure in place to support future residential and commercial development."
-      }
+//     features: [
+//       {
+//         title:"Gated community",
+//         description:"Controlled access point designed for future safety and gated community feel."
+//       },
+//       {
+//         title:"24x7 security",
+//         description:"Precision layout and markings ensure clarity and hassle-free registration."
+//       },
+//       {
+//         title:"CCTV surveillance",
+//         description:"Well-planned road network with primary and secondary access for smooth movement."
+//       },
+//       {
+//         title:"Café & Restaurant",
+//         description:"Modern infrastructure with concealed utility lines for a clean and efficient layout."
+//       },
+//       {
+//         title:"Clubhouse",
+//         description:"Thoughtfully planned open spaces for environment-friendly living and aesthetic appeal."
+//       },
+//       {
+//         title:"Children’s play area",
+//         description:"Energy infrastructure in place to support future residential and commercial development."
+//       }
       
-    ],
+//     ],
 
-    BrochureUrl:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",
-    legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",  
-  }
-,
+//     BrochureUrl:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",
+//     legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",  
+//   }
+// ,
 
   
 

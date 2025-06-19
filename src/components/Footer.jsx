@@ -1,5 +1,5 @@
 import { Building2, Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -27,20 +27,21 @@ const Footer = () => {
 
           {/* Right: Social + Copyright */}
           <div className="flex flex-col items-start md:items-end gap-6">
-            <p className="text-base text-gray-400">
-              © Copyright 2025. All Rights Reserved by WH Realtors
-            </p>
+            
             <div className="flex space-x-5">
-              <a href="#" aria-label="Facebook" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
-                <FaFacebookF size={20} />
+              <a href="https://www.instagram.com/whrealtors.in?igsh=eGJqcndxN3Q2MXY4&utm_source=qr" aria-label="Instagram" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
+                <FaInstagram size={20} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
+              {/* <a href="#" aria-label="LinkedIn" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
                 <FaLinkedinIn size={20} />
               </a>
               <a href="#" aria-label="YouTube" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
                 <FaYoutube size={20} />
-              </a>
+              </a> */}
             </div>
+            <p className="text-base text-gray-400">
+              © Copyright 2025. All Rights Reserved by WH Realtors
+            </p>
           </div>
         </div>
       </div>

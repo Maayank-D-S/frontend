@@ -14,6 +14,17 @@ const Projects = () => {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
   const navigate = useNavigate();
+  
+
+useEffect(() => {
+  if (!project) {
+    navigate("/", { replace: true });
+  }
+}, [project, navigate]);
+
+// if (!project) {
+//   return null; // or a small loader if you want
+// }
   const API_BASE = process.env.REACT_APP_API_BASE;
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -341,6 +352,8 @@ const Projects = () => {
   </div>
 </section>
 
+
+
       <section className="py-24 px-6 bg-black text-center">
         {/* tiny kicker */}
         <p className="text-sm tracking-widest uppercase text-gray-300 font-julius mb-2">
@@ -408,6 +421,7 @@ const Projects = () => {
                   onChange={(e) => setPhone(e.target.value)}
                   className="mt-1 w-full px-4 py-2 rounded bg-gray-800 text-white"
                   placeholder="+91 00000 00000"
+                  required
                 />
               </label>
 

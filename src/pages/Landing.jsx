@@ -13,7 +13,7 @@ const team = [
   { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
   {
     name: "Manisha",
-
+    role: "VP Sales",
     image: "/Profile/MH.jpg",
   },
   { name: "G D Sharma", role: "Working partner", image: "/Profile/GD.jpg" },
@@ -42,16 +42,19 @@ const Landing = () => {
   const API_BASE = process.env.REACT_APP_API_BASE;
   const SERVICES = [
     {
+      icon:"/icon1.jpg",
       iconColor: "bg-blue-500",
       label: "AI-Powered Property Sales",
       desc: "We bring third-party real estate projects to market using our proprietary AI sales platform — featuring voice and chat automation, transparent pricing, and data-rich insights.",
     },
     {
+      icon:"/icon2.jpg",
       iconColor: "bg-green-500",
       label: "Boutique Project Execution",
       desc: "We develop select boutique projects ranging from plots to villas. Every project is delivered with speed, cost control, and process transparency.",
     },
     {
+      icon:"/icon3.jpg",
       iconColor: "bg-purple-500",
       label: "Integrated Development",
       desc: "Over time we’ll launch our own full-scale developments — from residential to mixed-use — all delivered using our proprietary tech stack.",
@@ -263,7 +266,9 @@ const Landing = () => {
           <h2 className="text-4xl font-bold text-center mb-12 text-white font-julius">
             Our Projects
           </h2>
-
+          <p className="text-gray-300 mb-10 text-lg text-center font-julius">
+      VIEW OUR EXCLUSIVE OFFERINGS
+    </p>
           {/* stack on mobile | grid on md+ */}
           <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             {projects.map((p) => (
@@ -295,9 +300,9 @@ const Landing = () => {
               >
                 <div>
                   <div
-                    className={`w-14 h-14 ${s.iconColor} rounded-full flex items-center justify-center mb-6`}
+                    className={`w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6`}
                   >
-                    <Building2 className="w-6 h-6 text-white" />
+                    <img src={s.icon} alt={s.label} className="w-8 h-8 object-contain" />
                   </div>
 
                   <h3 className="text-xl font-semibold mb-4 tracking-wide font-julius">
@@ -367,39 +372,36 @@ const Landing = () => {
 
       {/* ────────── ABOUT US ────────── */}
       <section className="py-20 px-6 bg-black">
-  <div className="container mx-auto">
-    <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
-      Meet Our team
-    </h2>
-    <p className="text-gray-300 mb-10 text-xl text-center">
-      We are WH Realtors, passionate about shaping premium living experiences…
-    </p>
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
+            Meet Our team
+          </h2>
 
-    {/* Manual scroll belt */}
-    <div className="relative overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6">
-      <div className="flex gap-6 w-max whitespace-nowrap">
-        {team.map((member, idx) => (
-          <div
-            key={idx}
-            className="shrink-0 w-64 bg-white/10 rounded-2xl p-4 text-center"
-          >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="rounded-xl w-full h-72 object-cover mb-4"
-            />
-            <h4 className="text-lg font-semibold text-white font-julius">
-              {member.name}
-            </h4>
-            {member.role && (
-              <p className="text-gray-400 text-sm">{member.role}</p>
-            )}
+          {/* Manual scroll belt */}
+          <div className="relative overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6">
+            <div className="flex gap-6 w-max whitespace-nowrap">
+              {team.map((member, idx) => (
+                <div
+                  key={idx}
+                  className="shrink-0 w-64 bg-black rounded-2xl p-4 text-center"
+                >
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="rounded-xl w-full h-72 object-cover mb-4"
+                  />
+                  <h4 className="text-lg font-semibold text-white font-julius">
+                    {member.name}
+                  </h4>
+                  {member.role && (
+                    <p className="text-gray-400 text-sm">{member.role}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* ────────── CONTACT ────────── */}
       <section id="contact" className="py-20 px-6 bg-black">
@@ -407,6 +409,9 @@ const Landing = () => {
           <h2 className="text-4xl font-bold mb-6 text-white font-julius">
             Get In Touch
           </h2>
+          <p className="text-gray-300 mb-10 text-lg text-center font-julius">
+            SHARE YOUR DETAILS TO KNOW MORE
+          </p>
 
           {/* -------------- FORM -------------- */}
           <form className="space-y-6 text-left" onSubmit={handleSubmit}>
@@ -432,6 +437,7 @@ const Landing = () => {
                 type="tel"
                 placeholder="+91 00000 00000"
                 className="w-full px-4 py-3 rounded-md bg-white/5 border border-gray-700 text-white focus:outline-none"
+                required
               />
             </div>
 
