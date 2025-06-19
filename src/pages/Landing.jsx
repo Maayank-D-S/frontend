@@ -328,9 +328,9 @@ const Landing = () => {
                 <div key={s.label} className="min-w-full px-4">
                   <div className="bg-white/5 rounded-3xl p-6 shadow-lg text-left">
                     <div
-                      className={`w-12 h-12 ${s.iconColor} rounded-full flex items-center justify-center mb-6`}
+                      className={`w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6`}
                     >
-                      <Building2 className="w-5 h-5 text-white" />
+                      <img src={s.icon} alt={s.label} className="w-8 h-8 object-contain" />
                     </div>
                     <h3 className="text-lg font-semibold mb-3">{s.label}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed ">
