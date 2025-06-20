@@ -69,6 +69,7 @@ export const projects = [
     ],
     BrochureUrl:"https://drive.google.com/file/d/16DMeLfuD_O94luvxDvgDaZ3b0sCVGGPB/view?usp=sharing",
     legal:"https://drive.google.com/file/d/15ySMtaeSc5s3vPFq_xUdCvImp9JC8jPz/view?usp=sharing",  
+    googleMapURL:"",  
   },
   {
     id: "RAM VAN VILLAS",
@@ -165,7 +166,8 @@ export const projects = [
 
     BrochureUrl:
       "https://drive.google.com/file/d/15EWiW7LhKqKAiKoRLNw801qgrhd4kE3_/view?usp=sharing",
-    legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",  
+    legal:"https://drive.google.com/file/d/1tRaaJ39bFCNobXk_dH3u2nI-Eg90zGxr/view?usp=sharing",
+    googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
   },
 
   

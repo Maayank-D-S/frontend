@@ -386,13 +386,24 @@ useEffect(() => {
         {/* map + form container */}
         <div className="max-w-7xl mx-auto flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-8">
           {/* Map -------------------------------------------------------------- */}
-          <div className="h-[300px] md:h-full">
-            <Map
-              projectTitle={project.title}
-              latitude={project.lat}
-              longitude={project.lng}
-            />
-          </div>
+          <div className="h-[300px] md:h-full flex flex-col items-center md:justify-start justify-between gap-4">
+          <a
+    href={project.googleMapURL || "#"} // optional: set project.googleMapsUrl in your data
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-4 inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition"
+  >
+    View on Google Maps
+  </a>
+  <Map
+    projectTitle={project.title}
+    latitude={project.lat}
+    longitude={project.lng}
+  />
+  
+  {/* Button Below the Map */}
+  
+</div>
 
           {/* Form ------------------------------------------------------------- */}
           <div className="w-full md:h-full">
