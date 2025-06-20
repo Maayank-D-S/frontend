@@ -9,6 +9,7 @@ import Map from "../components/Map";
 import MobileGalleryCarousel from "../components/MobileGalleryCarousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Chat from "../components/Chat";
+import { FaTimes } from "react-icons/fa";
 
 const Projects = () => {
   const { projectId } = useParams();
@@ -82,18 +83,17 @@ useEffect(() => {
     <div className="bg-black text-white min-h-screen">
       {/* Header */}
       <header className="fixed w-full py-4 px-4 bg-black/70 z-30 backdrop-blur">
-        <div className="w-fit mb-2">
-          
-        </div>
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Back button on the extreme left */}
-          <a
-            href="/"
-            className="flex items-center gap-2 px-3  bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition"
-          >
-            <ChevronLeft />
-          </a>
-          <div className="flex items-center space-x-4 w-full">
+  <div className="max-w-7xl mx-auto flex items-center justify-between">
+    {/* Back button on the extreme left */}
+    <a
+      href="/"
+      className="flex items-center gap-2 px-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm transition"
+    >
+      <ChevronLeft />
+    </a>
+
+    {/* Logo */}
+    <div className="flex items-center space-x-4 w-full">
             {/* Logo and Title */}
             <div className="flex items-center space-x-3 ml-2">
               <div className="w-32 h-16 flex items-center justify-center rounded-lg">
@@ -103,91 +103,71 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-6 text-sm font-medium text-white/90">
-          <a
-              href="/"
-              className="hover:text-orange-400 font-julius"
-            >
-              Home
-            </a>
-            <a
-              href="#about-project"
-              className="hover:text-orange-400 font-julius"
-            >
-              About
-            </a>
-            <a href="#gallery" className="hover:text-orange-400 font-julius">
-              Gallery
-            </a>
-            <a href="#features" className="hover:text-orange-400 font-julius">
-              Features
-            </a>
-            <a href="#contact" className="hover:text-orange-400 font-julius">
-              Contact
-            </a>
-          </nav>
+    {/* Desktop Nav */}
+    <nav className="hidden md:flex gap-6 text-sm font-medium text-white/90">
+      <a href="/" className="hover:text-orange-400 font-julius">Home</a>
+      <a href="#about-project" className="hover:text-orange-400 font-julius">About</a>
+      <a href="#gallery" className="hover:text-orange-400 font-julius">Gallery</a>
+      <a href="#features" className="hover:text-orange-400 font-julius">Features</a>
+      <a href="#contact" className="hover:text-orange-400 font-julius">Contact</a>
+    </nav>
 
-          {/* Mobile Menu Icon */}
-          <button
-            className="md:hidden text-white z-40 ml-4"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={
-                  menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
-                }
-              />
-            </svg>
-          </button>
-        </div>
+    {/* Mobile Menu Icon */}
+    <button
+      onClick={() => setMenuOpen(true)}
+      className="md:hidden text-white z-40"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+        />
+      </svg>
+    </button>
+  </div>
+</header>
 
-        {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div className="md:hidden px-6 mt-2 space-y-2 bg-black/90 pb-4 absolute top-full left-0 w-full z-40">
-            <a
-              href="/"
-              className="block text-white hover:text-orange-400 font-julius"
-            >
-              Home
-            </a>
-            <a
-              href="#about-project"
-              className="block text-white hover:text-orange-400 font-julius"
-            >
-              About
-            </a>
-            <a
-              href="#gallery"
-              className="block text-white hover:text-orange-400 font-julius"
-            >
-              Gallery
-            </a>
-            <a
-              href="#features"
-              className="block text-white hover:text-orange-400 font-julius"
-            >
-              Features
-            </a>
-            <a
-              href="#contact"
-              className="block text-white hover:text-orange-400 font-julius"
-            >
-              Contact
-            </a>
-          </div>
-        )}
-      </header>
+{/* ────────────── MOBILE OVERLAY (copied from Landing) ────────────── */}
+<div
+  className={`
+    fixed inset-0 z-40 md:hidden
+    bg-black/40 backdrop-blur-md
+    transition-transform duration-300
+    ${menuOpen ? "translate-x-0" : "translate-x-full"}
+  `}
+>
+  <div className="absolute right-0 top-0 h-full w-4/5 bg-black/70 p-6 flex flex-col">
+    {/* Close icon */}
+    <button
+      onClick={() => setMenuOpen(false)}
+      className="self-end text-white mb-8"
+    >
+      <FaTimes className="h-8 w-8" />
+    </button>
+
+    {/* Mobile nav menu */}
+    <nav className="flex flex-col gap-8 text-lg text-white">
+      {[
+        ["Home", "/"],
+        ["About", "#about-project"],
+        ["Gallery", "#gallery"],
+        ["Features", "#features"],
+        ["Contact", "#contact"],
+      ].map(([label, href]) => (
+        <a
+          key={label}
+          href={href}
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-orange-400 font-julius"
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</div>
       {/* Hero Title */}
       <section className="text-center pt-28 md:pt-32 pb-10 z-10">
         <h2 className="text-5xl md:text-6xl font-extrabold font-julius">
