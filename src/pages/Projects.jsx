@@ -81,7 +81,7 @@ useEffect(() => {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Header */}
-      <header className="fixed w-full py-6 px-4 bg-black/70 z-30 backdrop-blur">
+      <header className="fixed w-full py-4 px-4 bg-black/70 z-30 backdrop-blur">
         <div className="w-fit mb-2">
           
         </div>
