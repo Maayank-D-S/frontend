@@ -312,7 +312,7 @@ useEffect(() => {
     </h3>
 
     {/* Manual scroll belt (mobile) | grid (desktop) */}
-    <div className="relative overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6 md:overflow-x-hidden">
+    <div className="relative overflow-x-auto overflow-y-hidden custom-scrollbar -mx-6 px-6 md:overflow-x-hidden">
       <div
         className="
           flex gap-4 w-max whitespace-nowrap
