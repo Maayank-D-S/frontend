@@ -165,7 +165,15 @@ const Chat = () => {
                 {messages.map((m) => (
                   <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                     <div className={`max-w-[80%] p-3 text-sm rounded-xl ${m.role === "user" ? "bg-indigo-500 text-white" : "bg-zinc-700 text-white"}`}>
-                      <p>{m.message}</p>
+                      <p>
+                      {m.message.split(/\n|(?=- )/).map((line, i) => (
+  line.trim().startsWith("-") ? (
+    <li key={i} className="list-disc ml-5">{line.replace(/^- /, "")}</li>
+  ) : (
+    <p key={i}>{line}</p>
+  )
+))}
+                      </p>
                     </div>
                   </div>
                 ))}
