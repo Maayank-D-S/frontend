@@ -69,7 +69,7 @@ export const projects = [
     ],
     BrochureUrl:"https://drive.google.com/file/d/16DMeLfuD_O94luvxDvgDaZ3b0sCVGGPB/view?usp=sharing",
     legal:"https://drive.google.com/file/d/15ySMtaeSc5s3vPFq_xUdCvImp9JC8jPz/view?usp=sharing",  
-    googleMapURL:"",  
+    googleMapURL:"https://maps.app.goo.gl/cMN2yhhhjTXsaAYp8?g_st=com.google.maps.preview.copy",  
   },
   {
     id: "RAM VAN VILLAS",
