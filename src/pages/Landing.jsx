@@ -378,7 +378,7 @@ const Landing = () => {
           </h2>
 
           {/* Manual scroll belt */}
-          <div className="relative overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6">
+          <div className="relative overflow-x-auto overflow-y-hidden scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-black -mx-6 px-6">
             <div className="flex gap-6 w-max whitespace-nowrap">
               {team.map((member, idx) => (
                 <div
