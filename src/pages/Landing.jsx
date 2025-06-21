@@ -19,7 +19,7 @@ const team = [
   { name: "G D Sharma", role: "Working partner", image: "/Profile/GD.jpg" },
 
   { name: "Suniil Verma", role: "Working partner", image: "/Profile/SKV.jpg" },
-  { name: "Pankaj Bhati", role: "Working partner", image: "/Profile/PB.jpg" },
+  { name: "Pankaj Bhati", role: "Partner", image: "/Profile/PB.jpg" },
 
   {
     name: "Aishwarya",
