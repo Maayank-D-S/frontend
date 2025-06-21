@@ -1,5 +1,10 @@
 import { Building2, Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -12,7 +17,12 @@ const Footer = () => {
             <ul className="text-base space-y-1 text-gray-300">
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5" />
-                <span className="text-blue-400">+91 7779991653</span>
+                <a
+                  href="tel:+917779991653"
+                  className="text-blue-400 hover:underline"
+                >
+                  +91 7779991653
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5" />
@@ -20,16 +30,21 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5" />
-                <span className="text-gray-300">516, 5th floor Supertech Astralis, Sector 94b Noida, 201313</span>
+                <span className="text-gray-300">
+                  516, 5th floor Supertech Astralis, Sector 94b Noida, 201313
+                </span>
               </li>
             </ul>
           </div>
 
           {/* Right: Social + Copyright */}
           <div className="flex flex-col items-start md:items-end gap-6">
-            
             <div className="flex space-x-5">
-              <a href="https://www.instagram.com/whrealtors.in?igsh=eGJqcndxN3Q2MXY4&utm_source=qr" aria-label="Instagram" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
+              <a
+                href="https://www.instagram.com/whrealtors.in?igsh=eGJqcndxN3Q2MXY4&utm_source=qr"
+                aria-label="Instagram"
+                className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition"
+              >
                 <FaInstagram size={20} />
               </a>
               {/* <a href="#" aria-label="LinkedIn" className="bg-gray-800 hover:bg-white hover:text-black text-white p-3 rounded-full transition">
