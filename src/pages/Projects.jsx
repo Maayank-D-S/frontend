@@ -357,7 +357,7 @@ useEffect(() => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-black px-6 py-16">
+      <section id="boom" className="bg-black px-6 py-16">
         {/* heading */}
         <h2 className="text-4xl font-bold text-center text-white mb-12 font-julius">
           Project Location
@@ -386,7 +386,7 @@ useEffect(() => {
 </div>
 
           {/* Form ------------------------------------------------------------- */}
-          <div className="w-full md:h-full">
+          <div id="contact" className="w-full md:h-full">
             <h3 className="text-3xl font-bold mb-6 text-center font-julius">
               Get In Touch
             </h3>
