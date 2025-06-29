@@ -130,7 +130,7 @@ const Chat = () => {
       <div className="bg-gray-1000 rounded-full p-2">
         <img src="/bot.png" alt="" className="w-10 h-10" />
       </div>
-      <span className="absolute bottom-0 right-0 w-2 h-2 bg-green-400 rounded-full border-2 border-gray-950" />
+      
     </div>
     <div className="text-center">
       <div className="text-white font-semibold leading-tight">Chatbot</div>
