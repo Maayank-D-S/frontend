@@ -19,27 +19,20 @@ import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
 
 pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`;
-
 const Projects = () => {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
   const navigate = useNavigate();
   const [showPdf, setShowPdf] = useState(false);
-  const zoomPluginInstance = zoomPlugin();
-  const [showBrochure, setShowBrochure] = useState(false);
-  
-  const { ZoomIn, ZoomOut, zoomTo } = zoomPluginInstance;
   const [open, setOpen] = useState(false);
+  const [showBrochure, setShowBrochure] = useState(false);
+  // const zoomPluginInstance = zoomPlugin();
+  // const { ZoomIn, ZoomOut } = zoomPluginInstance;
+  const zoomPluginInstanceBrochure = zoomPlugin();
+  const { ZoomIn: ZoomInBrochure, ZoomOut: ZoomOutBrochure } = zoomPluginInstanceBrochure;
 
-  // useEffect(() => {
-  //   if (open) {
-  //     // Set zoom to 150% when the PDF is opened
-  //     zoomTo(10);
-  //   }
-  //   if(showBrochure){
-  //     zoomTo(10);
-  //   }
-  // }, [open,showBrochure]);
+  const zoomPluginInstanceLegal = zoomPlugin();
+  const { ZoomIn: ZoomInLegal, ZoomOut: ZoomOutLegal } = zoomPluginInstanceLegal;
 
 useEffect(() => {
   if (!project) {
@@ -225,45 +218,40 @@ useEffect(() => {
 
   {/* Brochure Viewer */}
   {showBrochure && (
-    <div className="mt-10 flex flex-col items-center justify-center gap-4 px-4">
-      {/* Zoom Buttons */}
-      {/* <div className="flex gap-4">
-        <ZoomOut>
-          {(props) => (
-            <button
-              onClick={props.onClick}
-              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
-            >
-              Zoom Out
-            </button>
-          )}
-        </ZoomOut>
-        <ZoomIn>
-          {(props) => (
-            <button
-              onClick={props.onClick}
-              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
-            >
-              Zoom In
-            </button>
-          )}
-        </ZoomIn>
-      </div> */}
-
-      {/* Viewer with responsive width and custom scrollbar */}
-      <div className="w-full max-w-[90vw] md:max-w-[1000px] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-          <Viewer
-            fileUrl={project.BrochureUrl || '/sample_brochure.pdf'}
-            plugins={[zoomPluginInstance]}
-            onDocumentLoad={() => {
-              zoomPluginInstance.zoomTo(0.5); // or 1.5 or 3 — 1 = 100%
-            }}
-          />
-        </Worker>
-      </div>
+  <div className="mt-10 flex flex-col items-center justify-center gap-4 px-6">
+    <div className="w-full max-w-[90vw] md:max-w-[1000px] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+        <Viewer
+          fileUrl={project.BrochureUrl || '/sample_brochure.pdf'}
+          plugins={[zoomPluginInstanceBrochure]}
+        />
+      </Worker>
     </div>
-  )}
+    <div className="flex gap-4">
+      <ZoomOutBrochure>
+        {(props) => (
+          <button
+            onClick={props.onClick}
+            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+          >
+            Zoom Out
+          </button>
+        )}
+      </ZoomOutBrochure>
+      <ZoomInBrochure>
+        {(props) => (
+          <button
+            onClick={props.onClick}
+            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+          >
+            Zoom In
+          </button>
+        )}
+      </ZoomInBrochure>
+    </div>
+  </div>
+)}
+
 </section>
       {/* Hero Image */}
       <motion.div
@@ -401,31 +389,52 @@ useEffect(() => {
 
 
 <section className="py-24 px-6 bg-black text-center">
-      {/* Toggle Button */}
-      <button
-        onClick={() => setOpen((p) => !p)}
-        className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
-      >
-        {open ? 'Hide Legal Docs' : 'View Legal Docs'}
-      </button>
+  {/* Toggle Button */}
+  <button
+    onClick={() => setOpen((p) => !p)}
+    className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
+  >
+    {open ? 'Hide Legal Docs' : 'View Legal Docs'}
+  </button>
 
-      {open && (
-        <div className="flex flex-col items-center justify-center mt-10 gap-4">
-          {/* PDF Viewer */}
-          <div className="w-full max-w-[90vw] md:max-w-[1000px] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-              <Viewer
-                fileUrl={project.legal || '/sample_legal.pdf'}
-                plugins={[zoomPluginInstance]}
-                onDocumentLoad={() => {
-                  zoomPluginInstance.zoomTo(1.2); // or 1.5 or 3 — 1 = 100%
-                }}
-              />
-            </Worker>
-          </div>
-        </div>
-      )}
-    </section>
+  {open && (
+  <div className="flex flex-col items-center justify-center mt-10 gap-4">
+    <div className="w-full max-w-[90vw] md:max-w-[1000px] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+        <Viewer
+          fileUrl={project.legal || '/sample_legal.pdf'}
+          plugins={[zoomPluginInstanceLegal]}
+        />
+      </Worker>
+    </div>
+
+    <div className="flex gap-4">
+      <ZoomOutLegal>
+        {(props) => (
+          <button
+            onClick={props.onClick}
+            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+          >
+            Zoom Out
+          </button>
+        )}
+      </ZoomOutLegal>
+      <ZoomInLegal>
+        {(props) => (
+          <button
+            onClick={props.onClick}
+            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+          >
+            Zoom In
+          </button>
+        )}
+      </ZoomInLegal>
+    </div>
+  </div>
+)}
+
+</section>
+
 
       {/* Contact */}
       <section id="boom" className="bg-black px-6 py-16">
