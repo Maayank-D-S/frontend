@@ -11,8 +11,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Chat from "../components/Chat";
 import { FaTimes } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
-import { Viewer, Worker } from '@react-pdf-viewer/core';
+import { Viewer, Worker} from '@react-pdf-viewer/core';
+import { zoomPlugin } from '@react-pdf-viewer/zoom';
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
 
 
@@ -24,6 +26,8 @@ const Projects = () => {
   const [showPdf, setShowPdf] = useState(false);
   const [open, setOpen] = useState(false);
   const [showBrochure, setShowBrochure] = useState(false);
+  const zoomPluginInstance = zoomPlugin();
+  const { ZoomIn, ZoomOut } = zoomPluginInstance;
 
 useEffect(() => {
   if (!project) {
@@ -209,14 +213,42 @@ useEffect(() => {
 
   {/* Brochure Viewer */}
   {showBrochure && (
-    <div className="mt-10 flex justify-center px-6">
-      <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-white/20">
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-          <Viewer fileUrl={project.BrochureUrl || '/sample_brochure.pdf'} />
-        </Worker>
-      </div>
+  <div className="mt-10 flex flex-col items-center justify-center gap-4 px-6">
+    {/* Zoom Buttons */}
+    <div className="flex gap-4">
+      <ZoomOut>
+        {(props) => (
+          <button
+            onClick={props.onClick}
+            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+          >
+            Zoom Out
+          </button>
+        )}
+      </ZoomOut>
+      <ZoomIn>
+        {(props) => (
+          <button
+            onClick={props.onClick}
+            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+          >
+            Zoom In
+          </button>
+        )}
+      </ZoomIn>
     </div>
-  )}
+
+    {/* Viewer */}
+    <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-white/20">
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+        <Viewer
+          fileUrl={project.BrochureUrl || '/sample_brochure.pdf'}
+          plugins={[zoomPluginInstance]}
+        />
+      </Worker>
+    </div>
+  </div>
+)}
 </section>
       {/* Hero Image */}
       <motion.div
@@ -363,10 +395,38 @@ useEffect(() => {
   </button>
 
   {open && (
-    <div className="flex justify-center mt-10 custom-scrollbar overflow-x-auto -mx-6 px-6">
+    <div className="flex flex-col items-center justify-center mt-10 gap-4">
+      {/* Zoom Buttons */}
+      <div className="flex gap-4">
+        <ZoomOut>
+          {(props) => (
+            <button
+              onClick={props.onClick}
+              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+            >
+              Zoom Out
+            </button>
+          )}
+        </ZoomOut>
+        <ZoomIn>
+          {(props) => (
+            <button
+              onClick={props.onClick}
+              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+            >
+              Zoom In
+            </button>
+          )}
+        </ZoomIn>
+      </div>
+
+      {/* PDF Viewer */}
       <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-          <Viewer fileUrl={project.legal || '/sample_legal.pdf'} />
+          <Viewer
+            fileUrl={project.legal || '/sample_legal.pdf'}
+            plugins={[zoomPluginInstance]}
+          />
         </Worker>
       </div>
     </div>
