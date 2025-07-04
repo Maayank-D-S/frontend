@@ -23,6 +23,7 @@ const Projects = () => {
   const navigate = useNavigate();
   const [showPdf, setShowPdf] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showBrochure, setShowBrochure] = useState(false);
 
 useEffect(() => {
   if (!project) {
@@ -176,36 +177,47 @@ useEffect(() => {
   </div>
 </div>
       {/* Hero Title */}
-      <section className="text-center pt-28 md:pt-32 pb-10 z-10">
-        <h2 className="text-5xl md:text-6xl font-extrabold font-julius">
-          {project.title}
-        </h2>
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() =>
-              alert(
-                "Please fill the form, we will contact you on whatsapp and email shortly!"
-              )
-            }
-          >
-            <a
-              href="#contact"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium "
-            >
-              <FaWhatsapp className="text-lg mr-2" /> Book Now
-            </a>
-          </button>
+      <section className="text-center pt-28 md:pt-32 pb-10 mb-10 z-10">
+  <h2 className="text-5xl md:text-6xl font-extrabold font-julius">
+    {project.title}
+  </h2>
 
-          <a
-            href={project.BrochureUrl || "/sample_brochure.pdf"}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium "
-          >
-            View Brochure
-          </a>
-        </div>
-      </section>
+  {/* Buttons */}
+  <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+    <button
+      onClick={() =>
+        alert(
+          'Please fill the form, we will contact you on whatsapp and email shortly!'
+        )
+      }
+    >
+      <a
+        href="#contact"
+        className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-lg font-medium"
+      >
+        <FaWhatsapp className="text-lg mr-2" /> Book Now
+      </a>
+    </button>
+
+    <button
+      onClick={() => setShowBrochure((prev) => !prev)}
+      className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-lg font-medium transition"
+    >
+      {showBrochure ? 'Hide Brochure' : 'View Brochure'}
+    </button>
+  </div>
+
+  {/* Brochure Viewer */}
+  {showBrochure && (
+    <div className="mt-10 flex justify-center px-6">
+      <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-white/20">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Viewer fileUrl={project.BrochureUrl || '/sample_brochure.pdf'} />
+        </Worker>
+      </div>
+    </div>
+  )}
+</section>
       {/* Hero Image */}
       <motion.div
         ref={imageRef}

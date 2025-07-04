@@ -77,7 +77,7 @@ export const projects = [
       }
       
     ],
-    BrochureUrl:"https://drive.google.com/file/d/16DMeLfuD_O94luvxDvgDaZ3b0sCVGGPB/view?usp=sharing",
+    BrochureUrl:"/KH/brochure.pdf",
     legal:"/KH/legal.pdf",  
     googleMapURL:"https://maps.app.goo.gl/cMN2yhhhjTXsaAYp8?g_st=com.google.maps.preview.copy",  
   },
@@ -179,7 +179,7 @@ export const projects = [
     ],
 
     BrochureUrl:
-      "https://drive.google.com/file/d/15EWiW7LhKqKAiKoRLNw801qgrhd4kE3_/view?usp=sharing",
+      "/RamVan/brochure.pdf",
     legal:"/RamVan/legal.pdf",
     googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
   },
