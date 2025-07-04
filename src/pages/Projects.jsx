@@ -213,42 +213,42 @@ useEffect(() => {
 
   {/* Brochure Viewer */}
   {showBrochure && (
-  <div className="mt-10 flex flex-col items-center justify-center gap-4 px-6">
-    {/* Zoom Buttons */}
-    <div className="flex gap-4">
-      <ZoomOut>
-        {(props) => (
-          <button
-            onClick={props.onClick}
-            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
-          >
-            Zoom Out
-          </button>
-        )}
-      </ZoomOut>
-      <ZoomIn>
-        {(props) => (
-          <button
-            onClick={props.onClick}
-            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
-          >
-            Zoom In
-          </button>
-        )}
-      </ZoomIn>
-    </div>
+    <div className="mt-10 flex flex-col items-center justify-center gap-4 px-4">
+      {/* Zoom Buttons */}
+      <div className="flex gap-4">
+        <ZoomOut>
+          {(props) => (
+            <button
+              onClick={props.onClick}
+              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+            >
+              Zoom Out
+            </button>
+          )}
+        </ZoomOut>
+        <ZoomIn>
+          {(props) => (
+            <button
+              onClick={props.onClick}
+              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+            >
+              Zoom In
+            </button>
+          )}
+        </ZoomIn>
+      </div>
 
-    {/* Viewer */}
-    <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden ring-1 ring-white/20">
-      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-        <Viewer
-          fileUrl={project.BrochureUrl || '/sample_brochure.pdf'}
-          plugins={[zoomPluginInstance]}
-        />
-      </Worker>
+      {/* Viewer with responsive width and custom scrollbar */}
+      <div className="w-full max-w-[90vw] sm:max-w-[75vh] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Viewer
+            fileUrl={project.BrochureUrl || '/sample_brochure.pdf'}
+            plugins={[zoomPluginInstance]}
+          />
+        </Worker>
+      </div>
     </div>
-  </div>
-)}
+  )}
 </section>
       {/* Hero Image */}
       <motion.div
@@ -386,7 +386,7 @@ useEffect(() => {
 
 
 <section className="py-24 px-6 bg-black text-center">
-  {/* toggle button */}
+  {/* Toggle Button */}
   <button
     onClick={() => setOpen((p) => !p)}
     className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
@@ -420,8 +420,8 @@ useEffect(() => {
         </ZoomIn>
       </div>
 
-      {/* PDF Viewer */}
-      <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden">
+      {/* PDF Viewer Container */}
+      <div className="w-full max-w-[90vw] sm:max-w-[75vh] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
           <Viewer
             fileUrl={project.legal || '/sample_legal.pdf'}
