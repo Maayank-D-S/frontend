@@ -6,6 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import Chat from "../components/Chat";
 import { FaBars, FaTimes } from "react-icons/fa";
+import VoiceChat from "../components/Voice";
 
 const team = [
   { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
@@ -489,6 +490,7 @@ const Landing = () => {
 
       <Footer />
       <Chat />
+      <VoiceChat />
     </div>
   );
 };
