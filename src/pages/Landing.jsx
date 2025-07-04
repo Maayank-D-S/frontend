@@ -490,7 +490,6 @@ const Landing = () => {
 
       <Footer />
       <Chat />
-      <VoiceChat />
     </div>
   );
 };

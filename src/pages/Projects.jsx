@@ -177,7 +177,7 @@ useEffect(() => {
   </div>
 </div>
       {/* Hero Title */}
-      <section className="text-center pt-28 md:pt-32 pb-10 mb-10 z-10">
+      <section className="text-center pt-28 md:pt-32 pb-10 mb-20 z-10">
   <h2 className="text-5xl md:text-6xl font-extrabold font-julius">
     {project.title}
   </h2>
