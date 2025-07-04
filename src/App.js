@@ -8,7 +8,8 @@ import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
 import GalleryCategory from "./pages/GalleryCategory";
 import VoiceChat from "./components/Voice";
-
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 const queryClient = new QueryClient();
 
 const App = () => (

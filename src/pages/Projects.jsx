@@ -10,13 +10,19 @@ import MobileGalleryCarousel from "../components/MobileGalleryCarousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Chat from "../components/Chat";
 import { FaTimes } from "react-icons/fa";
+import { Document, Page, pdfjs } from "react-pdf";
+import { Viewer, Worker } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`;
 const Projects = () => {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
   const navigate = useNavigate();
   const [showPdf, setShowPdf] = useState(false);
-
+  const [open, setOpen] = useState(false);
 
 useEffect(() => {
   if (!project) {
@@ -336,64 +342,24 @@ useEffect(() => {
 
 
 <section className="py-24 px-6 bg-black text-center">
-      {/* tiny kicker */}
-      <p className="text-sm tracking-widest uppercase text-gray-300 font-julius mb-2">
-        Legal Assurance
-      </p>
+  {/* toggle button */}
+  <button
+    onClick={() => setOpen((p) => !p)}
+    className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
+  >
+    {open ? 'Hide Legal Docs' : 'View Legal Docs'}
+  </button>
 
-      {/* big headline */}
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-julius text-white mb-10">
-        Secure Investment Guaranteed
-      </h2>
-
-      {/* toggle button */}
-      <button
-        onClick={() => setShowPdf((prev) => !prev)}
-        className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-      >
-        {showPdf ? "Hide Legal Docs" : "View Legal Docs"}
-      </button>
-
-      {showPdf && (
-        <div
-          className="
-            relative
-            flex justify-center                 /* ⬅ centers child horizontally */
-            overflow-x-auto overflow-y-hidden
-            custom-scrollbar
-            -mx-6 px-6
-            md:overflow-x-hidden
-            mt-10
-          "
-        >
-          <object
-            data={project.legal || '/sample_legal.pdf'}
-            type="application/pdf"
-            className="
-              w-[75vh]          /* width = 75 % of viewport height  */
-              h-[75vh]          /* keep square viewer               */
-              mx-auto           /* center when narrower than screen */
-              flex-shrink-0     /* prevent shrinking in flex layout */
-              md:rounded-2xl
-              shadow-xl
-              ring-1 ring-white/20
-            "
-          >
-            <p className="text-gray-300">
-              Your browser can’t display PDFs.&nbsp;
-              <a
-                href={project.legal || '/sample_legal.pdf'}
-                target="_blank"
-                rel="noreferrer"
-                className="underline hover:text-white"
-              >
-                Download it instead
-              </a>.
-            </p>
-          </object>
-        </div>
-      )}
-    </section>
+  {open && (
+    <div className="flex justify-center mt-10 custom-scrollbar overflow-x-auto -mx-6 px-6">
+      <div className="w-[75vh] h-[75vh] bg-white rounded-xl shadow-xl overflow-hidden">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Viewer fileUrl={project.legal || '/sample_legal.pdf'} />
+        </Worker>
+      </div>
+    </div>
+  )}
+</section>
 
       {/* Contact */}
       <section id="boom" className="bg-black px-6 py-16">
