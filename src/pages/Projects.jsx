@@ -15,7 +15,8 @@ const Projects = () => {
   const { projectId } = useParams();
   const project = projects.find((p) => p.id === projectId);
   const navigate = useNavigate();
-  
+  const [showPdf, setShowPdf] = useState(false);
+
 
 useEffect(() => {
   if (!project) {
@@ -334,27 +335,65 @@ useEffect(() => {
 
 
 
-      <section className="py-24 px-6 bg-black text-center">
-        {/* tiny kicker */}
-        <p className="text-sm tracking-widest uppercase text-gray-300 font-julius mb-2">
-          Legal Assurance
-        </p>
+<section className="py-24 px-6 bg-black text-center">
+      {/* tiny kicker */}
+      <p className="text-sm tracking-widest uppercase text-gray-300 font-julius mb-2">
+        Legal Assurance
+      </p>
 
-        {/* big headline */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-julius text-white mb-10">
-          Secure Investment Guaranteed
-        </h2>
+      {/* big headline */}
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-julius text-white mb-10">
+        Secure Investment Guaranteed
+      </h2>
 
-        {/* download button */}
-        <a
-          href={project.legal || "/sample_legal.pdf"}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition"
+      {/* toggle button */}
+      <button
+        onClick={() => setShowPdf((prev) => !prev)}
+        className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+      >
+        {showPdf ? "Hide Legal Docs" : "View Legal Docs"}
+      </button>
+
+      {showPdf && (
+        <div
+          className="
+            relative
+            flex justify-center                 /* ⬅ centers child horizontally */
+            overflow-x-auto overflow-y-hidden
+            custom-scrollbar
+            -mx-6 px-6
+            md:overflow-x-hidden
+            mt-10
+          "
         >
-          View Legal Docs
-        </a>
-      </section>
+          <object
+            data={project.legal || '/sample_legal.pdf'}
+            type="application/pdf"
+            className="
+              w-[75vh]          /* width = 75 % of viewport height  */
+              h-[75vh]          /* keep square viewer               */
+              mx-auto           /* center when narrower than screen */
+              flex-shrink-0     /* prevent shrinking in flex layout */
+              md:rounded-2xl
+              shadow-xl
+              ring-1 ring-white/20
+            "
+          >
+            <p className="text-gray-300">
+              Your browser can’t display PDFs.&nbsp;
+              <a
+                href={project.legal || '/sample_legal.pdf'}
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:text-white"
+              >
+                Download it instead
+              </a>.
+            </p>
+          </object>
+        </div>
+      )}
+    </section>
 
       {/* Contact */}
       <section id="boom" className="bg-black px-6 py-16">
