@@ -21,35 +21,44 @@ const VoiceChat = () => {
   const [connected, setConnected] = useState(false);
 
   const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:5000";
-  const userId   = "user123";      // ⬅️ replace with your auth user-id
+  const userId   = "user123"; // replace with real user ID
 
   /* -------------------- start chat ---------------- */
   const startVoiceChat = async () => {
     const info = generateLiveKitInfo(userId);
+    console.log("🔧 Generated LiveKit info:", info);
 
-    /* 1️⃣  LiveKit token */
+    // 1️⃣ Get LiveKit Token
+    console.log("🔐 Fetching LiveKit token...");
     const tokenRes = await fetch(`${API_BASE}/api/get-livekit-token`, {
       method : "POST",
       headers: { "Content-Type": "application/json" },
       body   : JSON.stringify({ room: info.roomName, identity: info.identity }),
     });
-    if (!tokenRes.ok) return console.error("❌ token fetch failed");
+    if (!tokenRes.ok) return console.error("❌ Token fetch failed");
     const { token } = await tokenRes.json();
+    console.log("✅ Token received",token);
 
-    /* 2️⃣  connect */
+    // 2️⃣ Connect to room
+    console.log("🔗 Connecting to LiveKit room...");
     const lkRoom = new Room();
     await lkRoom.connect("wss://ds-nl2qsdc2.livekit.cloud", token, {
       autoSubscribe: true,
     });
+    console.log("✅ Connected to room");
 
-    /* 3️⃣  publish mic so the participant exists */
+    // 3️⃣ Publish mic
+    console.log("🎙️ Publishing mic track...");
     const micTrack = await createLocalAudioTrack();
     await lkRoom.localParticipant.publishTrack(micTrack);
+    console.log("✅ Mic track published");
 
-    /* give LiveKit Cloud a moment to index the participant */
-    await new Promise((r) => setTimeout(r, 10000));   // 1 second
+    // 4️⃣ Delay to ensure participant registration
+    console.log("⏳ Waiting for LiveKit to index participant...");
+    await new Promise((r) => setTimeout(r, 10000)); // 10 seconds
 
-    /* 4️⃣  now launch backend agent */
+    // 5️⃣ Start backend voice agent
+    console.log("🚀 Launching backend voice agent...");
     const backendRes = await fetch(`${API_BASE}/ai/start_voice_agent`, {
       method : "POST",
       headers: { "Content-Type": "application/json" },
@@ -60,18 +69,31 @@ const VoiceChat = () => {
         identity  : info.identity,
       }),
     });
-    if (!backendRes.ok) return console.error("❌ voice-agent start failed");
+    if (!backendRes.ok) return console.error("❌ Voice-agent start failed");
+    console.log("✅ Backend voice agent launched");
 
-    /* 5️⃣  play incoming bot audio */
-    lkRoom.on(RoomEvent.TrackSubscribed, (track) => {
+    // 6️⃣ Subscribe to bot audio
+    lkRoom.on(RoomEvent.TrackSubscribed, (track, pub, participant) => {
       if (track.kind === "audio") {
+        console.log(`🔊 Subscribed to audio from: ${participant.identity}`);
         const el = new Audio();
         track.attach(el);
-        el.play().catch((e) => console.error("audio play", e));
+        el.play().catch((e) => console.error("⚠️ Audio play error:", e));
       }
     });
 
-    lkRoom.on(RoomEvent.Disconnected, () => setConnected(false));
+    lkRoom.on(RoomEvent.ParticipantConnected, (participant) => {
+      console.log(`👤 Participant joined: ${participant.identity}`);
+    });
+
+    lkRoom.on(RoomEvent.ParticipantDisconnected, (participant) => {
+      console.log(`👋 Participant left: ${participant.identity}`);
+    });
+
+    lkRoom.on(RoomEvent.Disconnected, () => {
+      console.log("❌ Room disconnected");
+      setConnected(false);
+    });
 
     setRoom(lkRoom);
     setConnected(true);
@@ -79,6 +101,7 @@ const VoiceChat = () => {
 
   /* -------------------- leave chat --------------- */
   const leaveRoom = () => {
+    console.log("🚪 Leaving room...");
     room?.disconnect();
     setConnected(false);
   };

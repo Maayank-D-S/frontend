@@ -32,8 +32,8 @@ export const projects = [
     category: "Residential plots in Special Investment Region",
     duration: "24 months",
     price: "3.500.000",
-    lat:22.4274619,
-    lng:72.2203187,
+    lat:22.5844903,
+    lng:72.1977156,
     Advantages: [
       {
         title: "Prime Location in Dholera SIR",
