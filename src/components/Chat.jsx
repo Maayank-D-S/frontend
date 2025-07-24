@@ -91,9 +91,9 @@ const Chat = () => {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="fixed bottom-6 right-6 w-12 h-12 bg-gray-700 text-white p-4 rounded-full shadow-xl z-50">
+      <button onClick={() => setIsOpen(true)} className="fixed bottom-6 right-6 w-16 h-16 bg-gray-700 text-white p-4 rounded-full shadow-xl z-50">
         {/* <MessageCircle className="w-6 h-6" /> */}
-        <img src="/bot.png" alt="Chatbot" className="absolute bottom-0 right-0 w-12 h-12 rounded-full border-2 border-white" />
+        <img src="/chqtbot.png" alt="Chatbot" className="absolute bottom-0 right-0 w-16 h-16 rounded-full border-2 border-white" />
       </button>
 
       {isOpen && (
