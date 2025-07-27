@@ -376,7 +376,7 @@ useEffect(() => {
               <ShieldCheck className="mx-auto w-8 h-8" />
             </div>
 
-            <h4 className="text-xl font-semibold">
+            <h4 className="text:lg md:text-xl font-semibold">
               {feature.description || feature}
             </h4>
           </motion.div>
