@@ -377,7 +377,7 @@ useEffect(() => {
             </div>
 
             <h4 className="text-xl font-semibold">
-              {feature.title || feature}
+              {feature.description || feature}
             </h4>
           </motion.div>
         ))}
