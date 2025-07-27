@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-const PROJECTS = ["Krupal Habitat", "Ramvan Villas"];
+const PROJECTS = ["Krupal Habitat", "Ramvan Villas","Samana Portofonio","Marriot Residencies Jumeirah Lake Towers","Damac Riverside","Sobha Central"];
 const API_BASE = process.env.REACT_APP_API_BASE;
 
 const getUserId = () => {
