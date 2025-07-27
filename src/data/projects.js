@@ -180,7 +180,7 @@ export const projects = [
 
     BrochureUrl:
       "/RamVan/brochure.pdf",
-    legal:"/RamVan/legal.pdf",
+    
     googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
   },
 
@@ -286,7 +286,7 @@ export const projects = [
 {
   id: "Sobha Central – The Horizon",
   title: "Sobha Central – The Horizon",
-  location:"Ramnagar, Uttarakhand",
+  location:"Dubai",
   description:
     "Sobha Central is a landmark residential development on Sheikh Zayed Road, Dubai. The Horizon is one of the towers in this integrated community, offering refined living across 1 and 2-bedroom apartments.",
   image: "/sobha/cover/c.png",
@@ -378,15 +378,15 @@ export const projects = [
   ],
 
   BrochureUrl:
-    "/RamVan/brochure.pdf",
-  legal:"/RamVan/legal.pdf",
+    "/sobha/b.pdf",
+  
   googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
 },
 
 {
   id: "Samana Portofino",
   title: "Samana Portofino",
-  location:"Ramnagar, Uttarakhand",
+  location:"Dubai",
   description:
     "Samana Portofino offers a blend of luxury and nature in Dubai, with an expansive list of water- and greenery-themed amenities, targeting modern wellness-focused living. It’s designed as a resort-style residence where everyday life feels like a vacation",
   image: "/samana/cover/c.jpg",
@@ -478,8 +478,8 @@ export const projects = [
   ],
 
   BrochureUrl:
-    "/RamVan/brochure.pdf",
-  legal:"/RamVan/legal.pdf",
+    "/samana/b.pdf",
+  
   googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
 },
 {
@@ -577,8 +577,8 @@ export const projects = [
   ],
 
   BrochureUrl:
-    "/RamVan/brochure.pdf",
-  legal:"/RamVan/legal.pdf",
+    "/m/b.pdf",
+  
   googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
 },
 {
@@ -676,8 +676,8 @@ export const projects = [
   ],
 
   BrochureUrl:
-    "/RamVan/brochure.pdf",
-  legal:"/RamVan/legal.pdf",
+    "/d/b.pdf",
+  
   googleMapURL:"https://maps.app.goo.gl/Q5y5SKGX82QnLHPE6?g_st=iw",  
 },
 

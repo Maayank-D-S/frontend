@@ -391,49 +391,56 @@ useEffect(() => {
 <section className="py-24 px-6 bg-black text-center">
   {/* Toggle Button */}
   <button
-    onClick={() => setOpen((p) => !p)}
+    onClick={() => {
+      if (project.legal) {
+        setOpen((p) => !p);
+      } else {
+        window.location.href = "#contact";
+        alert("Please fill the form and we will contact you")
+      }
+    }}
     className="inline-block px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
   >
-    {open ? 'Hide Legal Docs' : 'View Legal Docs'}
+    {project.legal && open ? 'Hide Legal Docs' : 'View Legal Docs'}
   </button>
 
-  {open && (
-  <div className="flex flex-col items-center justify-center mt-10 gap-4">
-    <div className="w-full max-w-[90vw] md:max-w-[1000px] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
-      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-        <Viewer
-          fileUrl={project.legal || '/sample_legal.pdf'}
-          plugins={[zoomPluginInstanceLegal]}
-        />
-      </Worker>
-    </div>
+  {project.legal && open && (
+    <div className="flex flex-col items-center justify-center mt-10 gap-4">
+      <div className="w-full max-w-[90vw] md:max-w-[1000px] h-[80vh] bg-white rounded-xl shadow-xl overflow-auto custom-scrollbar ring-1 ring-white/20">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Viewer
+            fileUrl={project.legal || '/sample_legal.pdf'}
+            plugins={[zoomPluginInstanceLegal]}
+          />
+        </Worker>
+      </div>
 
-    <div className="flex gap-4">
-      <ZoomOutLegal>
-        {(props) => (
-          <button
-            onClick={props.onClick}
-            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
-          >
-            Zoom Out
-          </button>
-        )}
-      </ZoomOutLegal>
-      <ZoomInLegal>
-        {(props) => (
-          <button
-            onClick={props.onClick}
-            className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
-          >
-            Zoom In
-          </button>
-        )}
-      </ZoomInLegal>
+      <div className="flex gap-4">
+        <ZoomOutLegal>
+          {(props) => (
+            <button
+              onClick={props.onClick}
+              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+            >
+              Zoom Out
+            </button>
+          )}
+        </ZoomOutLegal>
+        <ZoomInLegal>
+          {(props) => (
+            <button
+              onClick={props.onClick}
+              className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20"
+            >
+              Zoom In
+            </button>
+          )}
+        </ZoomInLegal>
+      </div>
     </div>
-  </div>
-)}
-
+  )}
 </section>
+
 
 
       {/* Contact */}
