@@ -12,24 +12,7 @@ const team = [
   { name: "Jasmain Singh", role: "Partner", image: "/Profile/JS.jpg" },
   { name: "Ramakant Vij", role: "Partner", image: "/Profile/RV.jpg" },
   { name: "Sidharth Mittal", role: "Partner", image: "/Profile/SM.jpg" },
-  {
-    name: "Manisha",
-    role: "VP Sales",
-    image: "/Profile/MH.jpg",
-  },
-  { name: "G D Sharma", role: "Working partner", image: "/Profile/GD.jpg" },
-
-  { name: "Suniil Verma", role: "Working partner", image: "/Profile/SKV.jpg" },
-  { name: "Pankaj Bhati", role: "Partner", image: "/Profile/PB.jpg" },
-
-  {
-    name: "Aishwarya",
-
-    image: "/Profile/AV.jpg",
-  },
-  { name: "Jyotika", image: "/Profile/Jyotika.jpg" },
-  { name: "Keshav", image: "/Profile/KS.jpg" },
-  { name: "Chinki", image: "/Profile/CR.jpg" },
+ 
 ];
 
 const Landing = () => {
