@@ -355,38 +355,7 @@ const Landing = () => {
       </section>
 
       {/* ────────── ABOUT US ────────── */}
-      <section className="py-20 px-6 bg-black">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-white text-center font-julius">
-            Meet Our team
-          </h2>
-
-          {/* Manual scroll belt */}
-          <div className="relative overflow-x-auto overflow-y-hidden custom-scrollbar -mx-6 px-6">
-            <div className="flex gap-6 w-max whitespace-nowrap">
-              {team.map((member, idx) => (
-                <div
-                  key={idx}
-                  className="shrink-0 w-64 bg-black rounded-2xl p-4 text-center"
-                >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="rounded-xl w-full h-72 object-cover mb-4"
-                  />
-                  <h4 className="text-lg font-semibold text-white font-julius">
-                    {member.name}
-                  </h4>
-                  {member.role && (
-                    <p className="text-gray-400 text-sm">{member.role}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
+    
       {/* ────────── CONTACT ────────── */}
       <section id="contact" className="py-20 px-6 bg-black">
         <div className="container mx-auto max-w-2xl text-center">
