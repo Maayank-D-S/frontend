@@ -42,18 +42,7 @@ const Footer = () => {
                 </div>
               </li>
 
-              {/* Gurgaon Branch */}
-              <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 mt-1" />
-                <div>
-                  <span className="font-semibold text-white">Gurgaon Branch:</span>
-                  <div className="text-gray-300">
-                    Unit no 111, Opp. Omaxe Celebration Mall,<br />
-                    Subhash Chowk, Sector 47, Gurugram 122001
-                  </div>
-                </div>
-              </li>
-
+          
               {/* Ahmedabad Office */}
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1" />
